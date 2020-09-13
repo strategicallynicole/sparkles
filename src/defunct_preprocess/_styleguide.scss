@@ -1,0 +1,59 @@
+.single-post-content {
+    blockquote {
+        margin: 30px 0;
+        &:nth-child(3n + 1) {
+            @include font($playfair);
+            font-size: 16px;
+            color: $white;
+            position: relative;
+            padding: 65px 20px 20px 20px;
+            text-align: center;
+            line-height: 1.8;
+            &::before {
+                content: '\f10d';
+                font-family: FontAwesome;
+                position: absolute;
+                font-size: 30px;
+                top: 0;
+                left: 50%;
+                transform: translate(-50%);
+                color: $gray;
+            }
+        }
+        &:nth-child(3n + 2) {
+            @include font($libre);
+            font-size: 16px;
+            color: $text;
+            line-height: 1.8;
+            padding: 25px 25px 25px 50px;
+            background: $sidebar-bg;
+            position: relative;
+            &::before {
+                content: '';
+                border-left: 6px solid $red;
+                position: absolute;
+                top: 25px;
+                left: 22px;
+                height: calc(100% - 50px);
+            }
+        }
+        &:nth-child(3n + 3) {
+            @include font($libre);
+            background: $sidebar-bg;
+            color: $text;
+            text-align: center;
+            position: relative;
+            padding: 65px 20px 20px 20px;
+            &::before {
+                content: '\f10d';
+                font-family: FontAwesome;
+                position: absolute;
+                font-size: 30px;
+                top: 10px;
+                left: 50%;
+                transform: translate(-50%);
+                color: $gray;
+            }
+        }
+    }
+}

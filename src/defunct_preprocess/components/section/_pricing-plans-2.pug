@@ -1,0 +1,61 @@
+include ../pricing/_pricing
+include ../multiswitch/_multiswitch
+
+// Pricing plans
+section#pricing.section.section-lg
+	.container
+		.row.justify-content-center
+			.col-xxl-10
+				.group-20.d-sm-flex.align-items-sm-end.justify-content-sm-between.text-center
+					h2 Pricing Plan
+					div
+						+switch-with-text({
+							targets:   { targets: '#multiswitch, #pricing-group', state: true },
+							textLeft:  'Annual',
+							textRight: 'Monthly'
+						})#multiswitch
+
+				#pricing-group.pricing-group.offset-md
+					// Owl Carousel
+					.owl-carousel.owl-style-1.owl-item-end(
+						data-owl={
+							loop: false,
+							mouseDrag: false,
+							dots: true,
+							autoplay: false,
+							responsive: {
+								768: {
+									items: 2
+								},
+								992: {
+									items: 3
+								},
+								1600: {
+									items: 3,
+									margin: 100
+								}
+							}
+						} )
+						+pricing-modern({
+							subtitle:  'Starter',
+							title:     'Basic',
+							text:      'Ut enim ad minim veniam, quis nostrud sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+							price:     '14',
+							priceYear: '159'
+						}).pricing-success.block.block-sm.block-center( data-animate!={ class: 'fadeInUp' } )
+						+pricing-modern({
+							subtitle:  'Personal',
+							title:     'Standard',
+							text:      'Ut enim ad minim veniam, quis nostrud sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+							price:     '30',
+							priceYear: '350'
+						}).pricing-secondary.block.block-sm.block-center( data-animate!={ class: 'fadeInUp' } )
+						+pricing-modern({
+							subtitle:  'For team',
+							title:     'Premium',
+							text:      'Ut enim ad minim veniam, quis nostrud sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+							price:     '50',
+							priceYear: '550'
+						}).pricing-primary.block.block-sm.block-center( data-animate!={ class: 'fadeInUp' } )
+
+include ../modal/_modal

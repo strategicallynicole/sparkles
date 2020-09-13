@@ -1,0 +1,263 @@
+.fa-spin {
+    -webkit-animation: fa-spin 0.75s infinite linear !important;
+    animation: fa-spin 0.75s infinite linear !important;
+}
+.member-banner{
+    padding: 100px 0 150px;
+}
+.login-content{
+    padding-top: 70px;
+}
+
+/* Login style  */
+.authbox,
+.signup-form{
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+    p{
+        margin-top: 0;
+    }
+}
+.authbox-login{
+    display: flex;
+    button.btn{
+        width: 150px;
+        border: 0;
+    }
+    input{
+        border-right: 0;
+    }
+}
+.button-content{
+    display: block;
+}
+.button-loader{
+    display: none;
+}
+.loading{
+    .button-loader{
+        display: block;
+    }
+    .button-content{
+        display: none;
+    }
+}
+.authbox-extra{
+    color: $text;
+    a{
+        &:hover{
+            color: $redhover;
+        }
+    }
+}
+.message-success,
+.message-error{
+    display: none;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.message-success{
+    color: #04C600;
+}
+.message-error{
+    color: $red;
+}
+.error{
+    .message-error{
+        display: block;
+    } 
+}
+.success{
+    .message-success{
+        display: block;
+    }
+}
+
+
+/* Notification */
+.notification {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 9000;
+    padding: 20px 60px;
+    color: #fff;
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 500;
+    text-align: center;
+    background: green;
+    transition: all 0.35s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+    transform: translateY(-175%);
+    visibility: hidden;
+    max-width: 1000px;
+    margin: 10px auto;
+}
+.subscribe-success .notification-subscribe {
+    visibility: visible;
+    transform: translateY(0);
+}
+.signup-success .notification-signup {
+    visibility: visible;
+    transform: translateY(0);
+}
+.signin-success .notification-signin {
+    visibility: visible;
+    transform: translateY(0);
+}
+.checkout-success .notification-checkout {
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.notification.closed {
+    visibility: hidden;
+    transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+    transform: translateY(-175%);
+}
+
+.notification-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+}
+
+.notification-close:before {
+    content: "";
+    position: absolute;
+    top: 29px;
+    right: 25px;
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transform: rotate(45deg);
+}
+
+.notification-close:after {
+    content: "";
+    position: absolute;
+    top: 29px;
+    right: 25px;
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transform: rotate(-45deg);
+}
+
+
+/* Membership pricing style */
+.Membership-plan-wrap{
+    padding: 100px 0;
+}
+.single-pricing-box {
+    text-align: center;
+    background-color: #101218;
+    border-radius: 6px;
+    padding: 50px 10px;
+    border: 1px solid #101218;
+    transition: .3s;
+    margin-bottom: 40px;
+
+    &:hover {
+        border-color: #191C24;
+        background-color: #191C24;
+        transform: scale(1.07);
+
+        a {
+            background: $red !important;
+            color: #FFFFFF;
+            border: 1px solid $red;
+        }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: $white;
+        font-family: $roboto;
+    }
+
+    .pricing-icon {
+        color: $white;
+        margin-bottom: 10px;
+
+        span {
+            color: $white;
+            font-size: 13px;
+        }
+    }
+
+    .pricing-count {
+        color: $white;
+        margin-bottom: 20px;
+
+        span {
+            color: $white;
+            font-size: 16px;
+        }
+    }
+
+    .pricing-list {
+        margin-bottom: 10px;
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            padding-left: 6px;
+
+            li {
+                padding-bottom: 15px;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 16px;
+                color: #DCDCDC;
+                transition: .5s;
+                &.inactive{
+                    color: #7D90A6;
+                }
+            }
+        }
+    }
+}
+.btn-pricing{
+    color: #ffffff;
+    border-radius: 4px;
+    background: #101218 !important;
+    border: 1px solid #FFFFFF;
+    display: inline-block;
+    text-transform: capitalize;
+    transition: all 0.5s ease;
+    padding: 8px 25px;
+    font-size: 14px;
+}
+
+.payer-information{
+    background-color: rgba(57,68,77,.64);
+    padding: 25px 40px;
+    margin: 25px auto 0;
+    max-width: 300px;
+    text-align: left;
+    list-style: disc;
+    li{
+        color: #fff;
+        letter-spacing: .8px;
+        padding: 2px 0;
+        strong{
+            letter-spacing: 1;
+        }
+    }
+}

@@ -1,0 +1,70 @@
+.kg-bookmark-container {
+    display: flex;
+    color: black;
+    text-decoration: none;
+    border: 1px solid #4f5b6d !important;
+    &:hover {
+        border-width: 1px;
+    }
+}
+
+.kg-bookmark-content {
+    min-width: 100px;
+    padding: 20px;
+    width: 70%;
+    img {
+        width: auto;
+        height: 40px;
+    }
+}
+
+.kg-bookmark-title {
+    font-weight: 600;
+    color: #d4d3d3;
+}
+
+.kg-bookmark-description,
+.kg-bookmark-metadata {
+    margin-top: 12px;
+    color: #d4d3d3;
+}
+
+.kg-bookmark-thumbnail {
+    width: 30%;
+}
+
+.kg-bookmark-thumbnail img {
+    vertical-align: bottom;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.kg-bookmark-icon {
+    width: 22px;
+    height: 22px;
+    margin-right: 8px;
+    vertical-align: bottom;
+}
+
+.kg-bookmark-author:after {
+    content: '•';
+    margin: 0 6px;
+}
+
+.kg-bookmark-card {
+    opacity: 1;
+}
+.kg-bookmark-publisher {
+    opacity: 1;
+}
+
+@media screen and (max-width: 767px){
+    .kg-bookmark-container{
+        flex-direction: column-reverse;
+    }
+    .kg-bookmark-content,
+    .kg-bookmark-thumbnail{
+        width: 100%;
+    }
+}

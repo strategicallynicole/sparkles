@@ -1,0 +1,11 @@
+node_modules/
+dist/
+preprocess/
+./src/preprocess/
+./src/assets/scss/
+./src/media/
+./src/assets/css/
+./src/assets/sidebar/
+./src/assets/components/
+./src/defunct_preprocess/
+./src/components/

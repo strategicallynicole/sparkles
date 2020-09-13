@@ -1,0 +1,331 @@
+/* ------------------------------------------------------------ *\
+	Footer
+\* ------------------------------------------------------------ */
+
+/**************** Footer Section ****************/
+.footer-wrapper {
+    width: 100%;
+}
+/*footer subscribe section*/
+.subscribe-section {
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .subscribe-text {
+        text-align: center;
+        padding: 0 15px;
+        h2 {
+            @include font($oswald, 700);
+            font-size: 40px;
+            letter-spacing: 0.96px;
+        }
+        p {
+            @include font($playfair);
+            font-size: 20px;
+            color: $white;
+        }
+    }
+    .subscribe-form {
+        width: 100%;
+        max-width: 700px;
+        padding: 40px 40px 0;
+        .form-group {
+            display: flex;
+            margin-bottom: 0;
+            width: 100%;
+            .form-control {
+                display: block;
+                width: 100%;
+                height: calc(100% - 20px);
+                padding: 15px;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 1.5;
+                color: $text;
+                background-clip: padding-box;
+                border: 1px solid $white;
+                border-radius: 0;
+                margin-right: 15px;
+                height: 100%;
+                &:focus {
+                    box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.25);
+                    border-color: $red;
+                }
+                &::placeholder {
+                    @include font($libre);
+                    font-size: 16px;
+                }
+            }
+        }
+        button {
+                @include font($oswald);
+                font-size: 18px;
+                letter-spacing: 0.36px;
+				background: linear-gradient(88.33deg, #31294D -7.64%, #6C5BA7 145.94%);
+				box-shadow: inset -2px -2px 3px #40464E, inset 2px 2px 6px #0D0E0F;
+				border-radius: 93px !important;
+                color: $white !important;
+                border: 0;
+                padding: 15px 40px;
+				font-weight: 300;
+                font-size: 18px;
+                letter-spacing: .36px;
+                cursor: pointer;
+                width:   fit-content;
+                width:   -moz-fit-content;
+                margin: 0 auto;
+                @include transition;
+                position: relative;
+           
+                &::after {
+                        content: "";
+                        position: absolute;
+                        left: 0%;
+						right: 0%;
+                        top: 0%;
+                        bottom: 0%;
+						width:   100%;
+						cursor: pointer;
+						color: $white;
+                        background: linear-gradient(88.33deg, #31294D -7.64%, #6C5BA7 145.94%);
+                        border: 1px solid #2D2F34 !important;
+                        box-shadow: -3px -3px 9px rgba(53, 59, 66, 0.4), 10px 10px 20px #0D0E0F, inset 7px 7px 20px rgba(0, 0, 0, 0.75), inset 1px 1px 9px #2D2E35 !important;
+                        border-radius: 93px;
+                        opacity: 0;
+						text-decoration: none !important;
+						@include transition;
+						
+				}
+				&:hover {
+					-webkit-transform: scale(1, 1);
+					transform: scale(1, 1);
+				
+				}
+				&:hover::after {
+					opacity: 1 !important;
+				}  
+				&span {
+					color: $white;
+					z-index: 99;
+					position: relative;
+				}
+			
+			}
+		}
+	}
+
+.footerlogo {
+    
+    border-radius: 40px;
+}
+/*footer tags*/
+.footer-tag {
+    display: flex;
+    padding: 50px 0;
+    a {
+        width: 100%;
+    }
+    .single-tag {
+        width: 100%;
+        height: 200px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        &::after {
+            content: ' ';
+            height: calc(100% - 20px);
+            width: calc(100% - 20px);
+            left: 10px;
+            top: 10px;
+            position: absolute;
+            border: 1px solid $red;
+            transition: 0.3s;
+            z-index: 3;
+        }
+        .tag-name {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+     
+            
+            h6 {
+                @include font($oswald);
+                font-size: 18px;
+                transition: 0.3s;
+                transform: translateY(20px);
+                margin-bottom: 5px;
+                
+            }
+            p {
+                @include font($libre);
+                font-size: 14px;
+                visibility: hidden;
+                opacity: 0;
+                transform: translateY(20px);
+                transition: 0.3s;
+            }
+        }
+        &:hover {
+            &:after {
+                width: 100%;
+                height: 100%;
+                left: 0px;
+                top: 0px;
+            }
+            .tag-name {
+                h6 {
+                    color: $red;
+                    transform: translateY(0);
+                    z-index: 999 !important;
+                }
+                p {
+                    visibility: visible;
+                    opacity: 1;
+                    transform: translateY(0);
+                    z-index: 999 !important;
+                }
+            }
+        }
+    }
+    &.owl-carousel {
+        .owl-dots {
+            position: absolute;
+            left: 50%;
+            bottom: 10px;
+            transform: translateX(-50%);
+            button.owl-dot {
+                color: inherit;
+                border: none;
+                padding: 0 !important;
+                font: inherit;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: $red;
+                margin: 5px;
+                &.active {
+                    background: $white !important;
+                }
+            }
+        }
+    }
+}
+.tag-text {
+    color: #fff;
+    font-size: x-large !important;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 auto;
+    padding-top: 20px;
+    margin-bottom: -20px;
+
+}
+.footerlogo {
+    box-shadow: inset 3px 3px 10px rgba(13, 14, 15, 0.4);
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+/*footer social section*/
+.footer-social-section-wrapper {
+    padding: 50px 0 30px;
+    text-align: center;
+    .brand {
+        h4 {
+            text-align: center;
+            @include font($sign);
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+    }
+    .social-section {
+        h4 {
+            @include font($oswald);
+            font-size: 22px;
+        }
+    }
+    .social-icons {
+
+		a {
+			color: $white !important;
+            height: 50px;
+            width: 50px;
+            background: linear-gradient(128.11deg, #26272B 6.67%, #34393F 97.78%);
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+			justify-content: center;
+            margin-right: 15px;
+			margin-top: 15px;
+			box-shadow: inset -2px -2px 3px #40464E, inset 2px 2px 6px #0D0E0F;
+			border: 0;
+			cursor: pointer;
+			@include transition;
+			position: relative;
+			&::after {
+					content: "";
+					position: absolute;
+					left: 0%;
+					right: 0%;
+					border-radius: 50px;
+					top: 0%;
+					bottom: 0%;
+					cursor: pointer;
+					width:   100%;
+					color: $white;
+					background: linear-gradient(88.33deg, #31294D -7.64%, #6C5BA7 145.94%);
+					border: 1px solid #2D2F34 !important;
+					box-shadow: -3px -3px 9px rgba(53, 59, 66, 0.4), 10px 10px 20px #0D0E0F, inset 7px 7px 20px rgba(0, 0, 0, 0.75), inset 1px 1px 9px #2D2E35 !important;
+					opacity: 0;
+					text-decoration: none !important;
+					@include transition;
+					
+			}
+			&:hover {
+				-webkit-transform: scale(1, 1);
+				transform: scale(1, 1);
+			
+			}
+			&:hover::after {
+				opacity: 1 !important;
+			}  
+			&i {
+				color: $white;
+				z-index: 99;
+				position: relative;
+			}
+		}
+    }
+}
+.subscribe-section .subscribe-form .form-group .form-control {
+    background: linear-gradient(137.63deg, #26272B 9.53%, #34393F 95.92%) !important;
+box-shadow: inset -3px -3px 10px #40464E, inset 3px 3px 10px #0D0E0F;
+border-radius: 20px;
+}
+.textforrollover {
+	color: $white;
+	z-index: 99;
+	position: relative;
+}
+/*copyright section*/
+.copyright-section {
+    padding: 20px 0 30px;
+    .copyright-text {
+        width: 100%;
+        text-align: center;
+    }
+}

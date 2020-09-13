@@ -1,0 +1,32 @@
+/*=================== Section title style =========================*/
+.section-title {
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 25px;
+    &:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        content: '';
+        width: 5px;
+        height: 100%;
+        background-color: $red;
+    }
+    &.text-right{
+        padding-left: 0;
+        padding-right: 25px;
+        &::before{
+            left: auto;
+            right: 0;
+        }
+    }
+    h1, h2, h3, h4, h5, h6 {
+        color: $white;
+        @include font($oswald);
+        letter-spacing: 1.04px;
+        text-transform: uppercase;
+        margin: 0;
+        line-height: 1;
+        padding: 20px 0;
+    }
+}

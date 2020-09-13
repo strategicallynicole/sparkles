@@ -1,0 +1,12 @@
+//- Video
+	@param {object} data - data object
+	@param {string} data.img - preview image video
+mixin video( data )
+	// Video
+	a.video( id='#', href='https://www.youtube.com/embed/-AhmuMqZB0s', data-lightgallery!={ selector: 'this' } )&attributes( attributes )
+		if block
+			block
+		else
+			+img( data.img ).video-image
+		.video-icon.mdi-play
+		.video-border

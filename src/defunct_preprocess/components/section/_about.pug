@@ -1,0 +1,44 @@
+include ../blurb/_blurb
+include ../video/_video
+
+// About
+section#about.section.section-lg
+	.container
+		h2.text-center Welcome to Neon
+		.row.row-offset-md.row-30.align-items-lg-center.justify-content-center.justify-content-lg-between
+			.col-lg-4.col-xl-3
+				.row.row-30.row-md-40.row-xl-50
+					.col-md-6.col-lg-12
+						+blurb({
+							embed: '<span class="icon icon-circle icon-lg icon-style-4 mdi-comment"></span>',
+							title: 'Friendly Support',
+							text:  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.'
+						}).blurb-lg-right.ml-xxl-1
+					.col-lg-12.d-none.d-lg-block
+						hr.divider.mr-0( style='width: 60%' )
+					.col-md-6.col-lg-12
+						+blurb({
+							embed: '<span class="icon icon-circle icon-lg icon-style-4 mdi-cursor-default"></span>',
+							title: 'User-friendly UI',
+							text:  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.'
+						}).blurb-lg-right.ml-xxl-1
+			.col-8.col-xs-7.col-md-6.col-lg-3.col-xl-4.text-center.order-first.order-lg-0.py-5.py-lg-0
+				+video
+					.image-hover
+						+img( 'image-09-428x428' )( data-image-to='media/image-10-428x428.jpg' )
+			.col-lg-4.col-xl-3
+				.row.row-30.row-md-40.row-xl-50
+					.col-md-6.col-lg-12
+						+blurb({
+							embed: '<span class="icon icon-circle icon-lg icon-style-4 mdi-dice"></span>',
+							title: 'Easy Customization',
+							text:  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.'
+						}).mr-xxl-1
+					.col-lg-12.d-none.d-lg-block
+						hr.divider.ml-0( style='width: 60%' )
+					.col-md-6.col-lg-12
+						+blurb({
+							embed: '<span class="icon icon-circle icon-lg icon-style-4 mdi-comment"></span>',
+							title: 'Simple Setup',
+							text:  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.'
+						}).mr-xxl-1

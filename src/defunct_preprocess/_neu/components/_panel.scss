@@ -1,0 +1,35 @@
+/* ------------------------------------------------------------ *\
+	Panel
+\* ------------------------------------------------------------ */
+
+.panel {
+	max-width: 100%;
+	width: 100%;
+	padding: 25px 11px 50px;
+	border-radius: 16px;
+	
+	.panel__head {
+		text-align: center;
+	}
+
+	.panel__title {
+		display: flex;
+		align-items: center;
+	
+		color: #fff;
+		text-align: center;
+		line-height: 1;
+	}
+
+	.panel__body {
+		padding-top: 27px;
+	}
+
+	.panel__actions {
+		text-align: center;
+	}
+}
+.panel-body {
+    padding: 25px;
+    margin-left: 15px;
+}

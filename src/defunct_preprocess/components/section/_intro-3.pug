@@ -1,0 +1,89 @@
+include ../list/_list
+
+// Intro
+section#home.section
+	.container
+		.swiper-container.swiper-pagination-creative(
+			data-swiper!= {
+				scrollbar: {
+					el: ''
+				},
+				loop: false,
+				autoplay:    {
+					delay:                5000,
+					disableOnInteraction: false
+				},
+				breakpoints: {
+					320:  {
+						autoplay: false
+					},
+					1200: {
+						autoplay: {
+							delay:                5000,
+							disableOnInteraction: false
+						}
+					}
+				}
+			} )
+			.swiper-wrapper
+				.swiper-slide
+					.row.align-items-center.justify-content-lg-center.flex-md-row-reverse
+						.col-md-5.col-lg-4.offset-xxl-1.text-md-center
+							+img( 'image-02-534x572.png' ).mt-md-3.ml-xxl-1.swiper-pagination-creative-image
+						.col-md-7.col-lg-6.col-xxl-5.offset-xl-1
+							h1 Your Everyday Application
+							.offset-xxs
+								p.biggest Welcome to Neon, an award-winning & easy-to-use mobile application revolutionizing your daily work.
+							.offset-sm
+								.group-30.offset-sm
+									a.btn.pl-1( href='#' )
+										span.btn-icon.icon.icon-round.icon-sm.icon-primary.icon-style-3.mdi-apple
+										span Apple Store
+									a.btn.pl-1( href='#' )
+										span.btn-icon.icon.icon-round.icon-sm.icon-primary.icon-style-3.mdi-google-play
+										span Google Play
+				.swiper-slide
+					.row.align-items-center.justify-content-lg-center.flex-md-row-reverse
+						.col-md-5.col-lg-4.offset-xxl-1.text-md-center
+							+img( 'image-03-434x609.png' ).mt-md-3.ml-xxl-1.swiper-pagination-creative-image
+						.col-md-7.col-lg-6.col-xxl-5.offset-xl-1
+							h1 Do More Tasks with Neon
+							.offset-xxs
+								p.biggest Our app was designed to let you manage your time more effectively both at work and at home.
+							.offset-sm
+								.group-30.offset-sm
+									a.btn.pl-1( href='#' )
+										span.btn-icon.icon.icon-round.icon-sm.icon-primary.icon-style-3.mdi-apple
+										span Apple Store
+									a.btn.pl-1( href='#' )
+										span.btn-icon.icon.icon-round.icon-sm.icon-primary.icon-style-3.mdi-google-play
+										span Google Play
+				.swiper-slide
+						.row.align-items-center.justify-content-lg-center.flex-md-row-reverse
+							.col-md-5.col-lg-4.offset-xxl-1.text-md-center
+								+img( 'image-01-647x551.png' ).mt-md-3.ml-xxl-1.swiper-pagination-creative-image
+							.col-md-7.col-lg-6.col-xxl-5.offset-xl-1
+								h1 Awesome Performance
+								.offset-xxs
+									p.biggest Neon delivers high performance and a variety of features that you’ll surely appreciate.
+								.offset-sm
+									.group-30.offset-sm
+										a.btn.pl-1( href='#' )
+											span.btn-icon.icon.icon-round.icon-sm.icon-primary.icon-style-3.mdi-apple
+											span Apple Store
+										a.btn.pl-1( href='#' )
+											span.btn-icon.icon.icon-round.icon-sm.icon-primary.icon-style-3.mdi-google-play
+											span Google Play
+			.swiper-pagination( data-pagination-progress )
+			.swiper-counter
+				span.swiper-counter-count 01
+				span.swiper-counter-divider
+				span.swiper-counter-total 03
+			
+			ul.swiper-soc
+				li.list-social-item
+					a.icon.icon-circle.icon-style-1.mdi-facebook( href='#' )
+				li.list-social-item
+					a.icon.icon-circle.icon-style-1.mdi-twitter( href='#' )
+
+	#form-output-subscribe.form-output.snackbar.snackbar-secondary

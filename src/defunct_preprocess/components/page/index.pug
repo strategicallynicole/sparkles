@@ -1,0 +1,17 @@
+extends ../base/_skeleton
+
+block variables
+	- pageName = 'Home';
+	- menu = menuHome;
+
+block page
+	+rd-navbar
+
+	include ../section/_intro
+	include ../section/_features
+	include ../section/_pricing-plans
+	include ../section/_about
+	include ../section/_get-in-touch
+	include ../section/_news
+	include ../section/_how-it-work
+	include ../section/_career

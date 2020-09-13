@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald');
+
+/*------------------------------------------------------------------
+Common Stylesheet
+
+Project:   Delas - Responsive Ghost Blogging Theme
+Build:     Ghost 2.x
+Author:    ElectronThemes
+Author URL: http://www.electrontheme.com/
+Version: 1.0.0
+*/
+
+
+/**---------------------------------------*/
+
+
+/**           Table Of contents          **/
+
+
+/**---------------------------------------*/
+
+
+/**
+* 0. Fonts
+* 1. Preloader
+* 2. Reset/Typogrphy
+* 3. Components
+* 4. Header
+* 5. Footer
+* 6. Featured Slider
+* 7. Section Title
+* 8. Top Authors
+* 9. Latest Posts
+* 10. Authors
+* 11. Author Page
+* 12. Tags
+* 13. Portfolio
+* 14. Contact Page
+* 15. Blog Single
+* 16. Sidebar
+* 17. Styleguide
+* 18. Gallery
+* 19. Responsive
+*/
+
+@import 'responsive';
+@import 'variables';
+@import 'fonts';
+@import 'reset';
+@import 'mixin';
+@import 'component';
+@import 'header';
+@import 'footer';
+@import 'featured-slider';
+@import 'section-title';
+@import 'top-authors';
+@import 'latest-posts';
+@import 'author';
+@import 'tag';
+@import 'portfolio';
+@import 'contact';
+@import 'blog-single';
+@import 'sidebar';
+@import 'styleguide';
+@import 'gallery';
+@import 'bookmark';
+@import 'membership';
+@mixin neumorphic {
+    background: linear-gradient(137.63deg, #26272B 9.53%, #34393F 95.92%);
+    box-shadow: 3px 3px 10px #0D0E0F, inset -3px -3px 10px #40464E;
+    transition: 3s all ease-in-out;
+}
+
+.strokemysvg {
+    color: #ffffff !important;
+    fill: #ffffff;
+    width: 70%;
+    opacity: .6;
+}
+
+.swirlone {
+    background-position-x: 0;
+    background-size: 100% 100%;
+    z-index: -1;
+    opacity: .7;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: fit-content;
+    position: absolute;
+    background-repeat: repeat-y;
+}
+
+.single-post-content blockquote:nth-child(3n+3) {
+    font-family: Raleway, sans-serif;
+    font-weight: 400;
+    background: #121212;
+    color: #ffffff;
+    text-align: center;
+    position: relative;
+    padding: 65px 20px 20px 20px;
+}
+
+.swirltwo {
+    background-position-x: 0;
+    background-size: 100% 100%;
+    z-index: -1;
+    opacity: .7;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: fit-content;
+    position: absolute;
+    background-repeat: repeat-y;
+}
+
+.wrapper {
+    position: relative;
+    /* overflow: hidden;*/
+    background: linear-gradient(173.26deg, #262B2F -0.68%, #16191D 74.03%);
+}
+
+.relative {
+    position: relative !important;
+}
+
+.cutie {
+    margin-top: -10px;
+}
+
+#pp-nav {
+    bottom: 5px;
+}
+
+.section__inner.duckytext {
+    padding-top: 0px !important;
+}
+
+button.owl-dot.active {
+    display: none;
+}
+
+.featured-slider.owl-carousel .owl-nav button.disabled {
+    display: none;
+}

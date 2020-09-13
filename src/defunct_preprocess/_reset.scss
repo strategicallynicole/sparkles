@@ -1,0 +1,225 @@
+/*==============================================
+ Pre Loader
+ ===============================================*/
+#preloader {
+    position: fixed;
+    z-index: 999999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    background: $primary;
+
+}
+
+.preloader-wave {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    margin: -30px 0 0 -30px;
+}
+
+.preloader-wave:before,
+.preloader-wave:after {
+    position: absolute;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    content: "";
+    -webkit-animation: preloader-wave 1.6s linear infinite;
+            animation: preloader-wave 1.6s linear infinite; 
+    border-radius: 50%;
+    background: $red;
+}
+
+.preloader-wave:after {
+    -webkit-animation-delay: -.8s;
+            animation-delay: -.8s;
+}
+
+@-webkit-keyframes preloader-wave {
+    0% {
+        -webkit-transform: scale(0, 0);
+                transform: scale(0, 0);
+        opacity: .5;
+    }
+    100% {
+        -webkit-transform: scale(1, 1);
+                transform: scale(1, 1);
+        opacity: 0;
+    }
+}
+
+@keyframes preloader-wave {
+    0% {
+        -webkit-transform: scale(0, 0);
+                transform: scale(0, 0);
+        opacity: .5;
+    }
+    100% {
+        -webkit-transform: scale(1, 1);
+                transform: scale(1, 1);
+        opacity: 0;
+    }
+}
+/* ----------------------------------------------------------------
+                           Typography
+-----------------------------------------------------------------*/
+@font-face {
+    font-family: 'AviatorSG';
+    src: url('../fonts/');
+    src: url('../fonts/?#iefix') format('embedded-opentype'),
+        url('../fonts/AviatorSG-Light.woff2') format('woff2'),
+        url('../fonts/AviatorSG-Light.woff') format('woff'),
+        url('../fonts/AviatorSG-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+html {
+    height: 100%;
+}
+body {
+    font-family: $roboto;
+    height: 100%;
+    background-color: $primary;
+}
+a:active,
+a:focus,
+input,
+select,
+textarea {
+    outline: none !important;
+}
+
+img {
+    max-width: 100%;
+}
+
+a,
+.container {
+    text-decoration: none !important;
+    transition: all 0.5s;
+}
+
+a:hover,
+.btn,
+button,
+.btn:hover {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+a:focus,
+button:focus {
+    outline: 0;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+ol {
+    margin: 0;
+    padding-left: 20px;
+}
+select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+}
+hr {
+    border-top: 1px solid rgba(#fff, 0.5);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    color: $white;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    font-family: $playfair;
+}
+
+h1 {
+    font-size: 40px;
+}
+h2 {
+    font-size: 36px;
+}
+h3 {
+    font-size: 30px;
+}
+h4 {
+    font-size: 24px;
+}
+h5 {
+    font-size: 22px;
+}
+h6 {
+    font-size: 18px;
+}
+p {
+    margin-bottom: 10px;
+    color: $text;
+    line-height: 1.8;
+    font-size: 16px;
+    font-family: $libre;
+}
+
+a {
+    color: $red;
+}
+
+.go-top {
+    display: none;
+    #top {
+        background: rgba(255, 255, 255, 0.1);
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $white;
+        position: fixed;
+        bottom: 30px;
+        right: 60px;
+        z-index: 911;
+        cursor: pointer;
+        &:hover {
+            background-color: $red;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    h1 {
+        font-size: 36px;
+    }
+    h2 {
+        font-size: 30px;
+    }
+    h3 {
+        font-size: 24px;
+    }
+    h4 {
+        font-size: 22px;
+    }
+    h5 {
+        font-size: 20px;
+    }
+    h6 {
+        font-size: 16px;
+    }
+    p {
+        font-size: 16px;
+    }
+}

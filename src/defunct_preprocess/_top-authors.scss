@@ -1,0 +1,194 @@
+/*=================== Top Authors style =========================*/
+.ta-carousel {
+    .owl-item {
+        &.active {
+            &:nth-last-child(-n + 2) {
+                .top-author-content {
+                    float: right;
+                    text-align: right;
+                }
+                .social-share-post {
+                    flex-direction: row-reverse;
+                    .share-post {
+                        left: auto;
+                        right: -100%;
+                    }
+                    &:hover {
+                        .share-post {
+                            left: auto;
+                            right: 0;
+                        }
+                    }
+                }
+            }
+            &:nth-child(-n + 2) {
+                .top-author-content {
+                    float: left;
+                    text-align: left;
+                }
+                .social-share-post {
+                    flex-direction: row;
+                    .share-post {
+                        left: 0;
+                        right: auto;
+                    }
+                    &:hover {
+                        .share-post {
+                            left: 0;
+                            right: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .owl-nav {
+        position: absolute;
+        right: 0;
+        top: -70px;
+        button.owl-prev,
+        button.owl-next {
+            padding-left: 15px !important;
+            &.disabled {
+                opacity: 0.3;
+            }
+        }
+    }
+}
+
+.top-authors {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+    justify-content: center;
+}
+.single-top-author {
+    // width: 20%;
+    padding: 10px;
+    h4 {
+        font-size: 18px;
+        @include font($libre);
+        margin-bottom: 15px;
+        color: $white;
+        text-align: center;
+        a {
+            color: $white;
+        }
+    }
+    &:hover {
+        h4 {
+            a {
+                color: $red;
+            }
+        }
+    }
+    h3 {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.5;
+        margin-bottom: 5px;
+        a {
+            color: $white;
+            &:hover,
+            &:focus {
+                color: $red;
+            }
+        }
+    }
+    &.active {
+        .top-author-content {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+.t-author-image {
+    width: 135px;
+    height: 135px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    margin: auto;
+}
+.top-author-content {
+    width: 100vw;
+    max-width: 500px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.top-author-meta {
+    margin-bottom: 15px;
+    font-family: $libre;
+    span {
+        color: $gray;
+        font-size: 14px;
+        font-style: italic;
+        a {
+            color: $gray;
+            &:hover {
+                color: $red;
+            }
+        }
+    }
+}
+.social-share-post {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    .share-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        color: $white;
+        font-size: 20px;
+        background-color: $gray;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        position: relative;
+        z-index: 2;
+        &:hover {
+            background-color: $red;
+        }
+    }
+    &:hover {
+        .share-icon {
+            background: $red;
+        }
+    }
+    .share-post {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        background-color: $dark;
+        padding: 5px 10px 5px 20px;
+        margin-left: -10px;
+        position: relative;
+        left: -100%;
+        transition: 0.5s;
+        opacity: 0;
+        visibility: hidden;
+        li {
+            margin-right: 10px;
+            a {
+                color: $white;
+                font-size: 18px;
+                &:hover {
+                    color: $red;
+                }
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    &:hover {
+        .share-post {
+            left: 0;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}

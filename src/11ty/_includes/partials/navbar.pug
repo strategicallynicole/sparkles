@@ -1,0 +1,15 @@
+nav#sidebar
+	.sidebar-header
+		img.effect-shine(src="/media/img/logo-symbol-purple-white.svg" width="125" style="max-width:100%;width:150px")
+	ul.list-unstyled.components
+		each item in site.navigation
+			li
+				a(class="effect-shine site-nav-button" href=item.url) #{item.label}
+		each doc in collections.docs
+			li
+				a(class="effect-shine site-nav-button" href=doc.url) #{doc.title}
+		a#toggler.dropdown-toggle(href="#pagesSubmenu" data-toggle="collapse" aria-expanded="true") Services
+			ul#pagesSubmenu.collapse.list-unstyled
+				each post in collections.posts										
+					li
+						a.effect-shine(href=post.url) #{post.title}

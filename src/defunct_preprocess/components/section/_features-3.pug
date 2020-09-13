@@ -1,0 +1,48 @@
+include ../blurb/_blurb
+include ../counter/_counter
+
+// Features
+section#features.section.section-md.pb-lg-0
+	.container
+		.row.row-10
+			.col-10.col-sm-8.col-lg-6.col-xxl-7.text-center
+				+img( 'image-08-698x554.png' )
+			.col-lg-6.col-xxl-5.pb-lg-4
+				.title-icon.group-20.mt-xxl-2
+					span.icon.icon-circle.icon-lg.icon-style-4.mdi-settings
+					h2 Quick and Intuitive Profile Configuration
+				.tab.tab-line
+					ul.nav.nav-line.nav-line-mod-2.bigger
+						li.nav-item( role='presentation' )
+							a.nav-link.active.show( href='#tabs-1-1', data-toggle='tab' ) How It Works
+						li.nav-item( role='presentation' )
+							a.nav-link( href='#tabs-1-2', data-toggle='tab' ) Statistics
+						li.nav-item( role='presentation' )
+							a.nav-link( href='#tabs-1-3', data-toggle='tab' ) 24/7 Support
+					// Tab panes
+					.tab-content.pt-3
+						#tabs-1-1.tab-pane.fade.active.show
+							p.bigger Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+							a.btn.btn-sm( href='#' ) Explore Now
+						#tabs-1-2.tab-pane.fade
+							.row.row-30.justify-content-lg-center.mt-3.text-center
+								.col-6.col-sm-4
+									+counter({
+										value: 453,
+										title: 'Projects'
+									}).block.block-xxs.block-center
+								.col-6.col-sm-4
+									+counter({
+										value:   100,
+										postfix: '%',
+										title:   'Projects'
+									}).block.block-xxs.block-center
+								.col-6.col-sm-4
+									+counter({
+										value:   34,
+										postfix: 'k',
+										title:   'Projects'
+									}).block.block-xxs.block-center
+						#tabs-1-3.tab-pane.fade
+							p.bigger Adipiscing inciderint est in. Ius nusquam oportere et, ius ea mazim definiebas scribentur, ne putent verterem necessitatibus.
+							a.btn.btn-sm( href='#' ) Explore Now

@@ -1,0 +1,239 @@
+/*Spacing*/
+/* Spacing for Margin */
+@for $i from 0 to 30 {
+    .m-top-#{$i} {
+        margin-top: #{5 * $i}px;
+    }
+}
+
+@for $i from 0 to 30 {
+    .m-bot-#{$i} {
+        margin-bottom: #{5 * $i}px;
+    }
+}
+
+@for $i from 0 to 30 {
+    .m-y-#{$i} {
+        margin-bottom: #{5 * $i}px;
+        margin-top: #{5 * $i}px;
+    }
+}
+@for $i from 0 to 20 {
+    .m-left-#{$i} {
+        margin-left: #{5 * $i}px;
+    }
+}
+
+@for $i from 0 to 20 {
+    .m-right-#{$i} {
+        margin-right: #{5 * $i}px;
+    }
+}
+
+@for $i from 0 to 20 {
+    .m-x-#{$i} {
+        margin-left: #{5 * $i}px;
+        margin-right: #{5 * $i}px;
+    }
+}
+
+/* Spacing for Padding */
+@for $i from 0 to 20 {
+    .p-left-#{$i} {
+        padding-left: #{5 * $i}px;
+    }
+}
+
+@for $i from 0 to 20 {
+    .p-right-#{$i} {
+        padding-right: #{5 * $i}px;
+    }
+}
+
+@for $i from 0 to 20 {
+    .p-x-#{$i} {
+        padding-left: #{5 * $i}px;
+        padding-right: #{5 * $i}px;
+    }
+}
+@for $i from 0 to 30 {
+    .p-top-#{$i} {
+        padding-top: #{5 * $i}px;
+    }
+}
+
+@for $i from 0 to 30 {
+    .p-bot-#{$i} {
+        padding-bottom: #{5 * $i}px;
+    }
+}
+
+@for $i from 0 to 30 {
+    .p-y-#{$i} {
+        padding-bottom: #{5 * $i}px;
+        padding-top: #{5 * $i}px;
+    }
+}
+
+/* Column Classes */
+@for $i from 1 to 12 {
+    .column-xl-#{$i},
+    .column-lg-#{$i},
+    .column-md-#{$i},
+    .column-sm-#{$i},
+    .column-#{$i} {
+        grid-column: span 12;
+    }
+}
+@media screen and (min-width: 576px) {
+    @for $i from 1 to 12 {
+        .column-sm-#{$i} {
+            grid-column: span #{$i};
+        }
+    }
+}
+@media screen and (min-width: 768px) {
+    @for $i from 1 to 12 {
+        .column-md-#{$i} {
+            grid-column: span #{$i};
+        }
+    }
+}
+@media screen and (min-width: 992px) {
+    @for $i from 1 to 12 {
+        .column-lg-#{$i} {
+            grid-column: span #{$i};
+        }
+    }
+}
+@media screen and (min-width: 1200px) {
+    @for $i from 1 to 12 {
+        .column-xl-#{$i} {
+            grid-column: span #{$i};
+        }
+    }
+}
+/* Grid Classes */
+@for $i from 1 to 3 {
+    .grid-row-#{$i} {
+        grid-row: span #{$i};
+    }
+}
+@media screen and (min-width: 576px) {
+    @for $i from 1 to 3 {
+        .grid-row-sm-#{$i} {
+            grid-row: span #{$i};
+        }
+    }
+}
+@media screen and (min-width: 768px) {
+    @for $i from 1 to 3 {
+        .grid-row-md-#{$i} {
+            grid-row: span #{$i};
+        }
+    }
+}
+@media screen and (min-width: 992px) {
+    @for $i from 1 to 3 {
+        .grid-row-lg-#{$i} {
+            grid-row: span #{$i};
+        }
+    }
+}
+@media screen and (min-width: 1200px) {
+    @for $i from 1 to 3 {
+        .grid-row-xl-#{$i} {
+            grid-row: span #{$i};
+        }
+    }
+}
+
+.section-padding {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+@for $i from 1 to 10 {
+    .maxw-#{$i + '00'} {
+        max-width: #{$i + '00'}px;
+    }
+}
+
+.btn-primary {
+    border-color: $primary;
+}
+.btn-primary.focus,
+.btn-primary:focus {
+    box-shadow: 0 0 0 transparent;
+}
+.btn {
+    border-radius: 0;
+    padding: 10px 25px;
+    &:focus{
+        box-shadow: none;
+    }
+}
+
+.max-w750 {
+    max-width: 750px;
+}
+
+.p-tags {
+    li {
+        display: inline-block;
+        a {
+            display: block;
+            text-transform: uppercase;
+            position: relative;
+            font-family: 'Lato', sans-serif;
+            font-size: 14px;
+            color: $white;
+            margin: 2px 20px 2px 0;
+            &::before {
+                content: '/';
+                position: absolute;
+                right: -15px;
+                color: $white;
+            }
+        }
+        &:last-child {
+            a::before {
+                content: unset;
+                pointer-events: none;
+            }
+        }
+    }
+}
+
+.rounded-15 {
+    border-radius: 15px !important;
+}
+.rounded-12 {
+    border-radius: 12px !important;
+}
+.rounded-50 {
+    border-radius: 50px !important;
+}
+
+.section-padding {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.flex-1 {
+    flex: 1 !important;
+}
+.btn-danger{
+    background-color: $red;
+    &:hover{
+        background-color: $redhover;
+    }
+}
+.border,
+.border-top,
+.border-right,
+.border-bottom,
+.border-left{
+    border-color: $border3 !important;
+}

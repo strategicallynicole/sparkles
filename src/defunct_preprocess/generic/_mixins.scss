@@ -1,0 +1,441 @@
+
+@mixin transition {
+    -moz-transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    -webkit-transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  @mixin clearfix {
+	content: '';
+	line-height: 0;
+	display: table;
+	clear: both;
+}
+
+@mixin breakpoint-up($name, $breakpoints: $breakpoints) {
+	$min: breakpoint-min($name, $breakpoints);
+
+	@media (min-width: $min) {
+		@content;
+	}
+}
+
+  @mixin border-box-alt {
+	  border: 1px solid $purple;
+	  box-sizing: border-box;
+	  -moz-box-sizing: border-box;
+	  -webkit-box-sizing: border-box;
+  }
+
+@mixin breakpoint-down($name, $breakpoints: $breakpoints) {
+	$max: breakpoint-max($name, $breakpoints);
+
+	@if $max == 767px {
+		@media (max-width: $max), screen and (max-width: $responsive-ios) and (orientation: landscape) {
+			@content;
+		}
+	} @else {
+		@media (max-width: $max) {
+			@content;
+		}
+	}
+}
+@mixin bg-grad {
+	background: radial-gradient(54.85% 46.25% at 50% 50%, #373A42 0%, #000000 100%);
+	@include bg-size-cover;
+	background-repeat: no-repeat !important;
+	background-attachment: fixed !important;
+	color: $light-text-on-dark-bg;
+}
+  
+  
+	@mixin hovers {
+	  &:hover {
+		-webkit-transform: scale(1, 1);
+		transform: scale(1, 1);
+	   }
+	  &:hover::after {
+		opacity: 1;
+	  }
+	}
+  
+  
+  
+  
+  
+  
+  
+	@mixin bg-size-cover {
+	  -webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
+	}
+  
+	@mixin neu-dark-bg {
+	  @include bg-grad;
+	  @include bg-size-cover;
+	  background-repeat: no-repeat !important;
+	  background-attachment: fixed !important;
+	  color: $light-text-on-dark-bg;
+	  font-family: 'Raleway';
+	  font-weight: 100;
+	  background: radial-gradient(54.85% 46.25% at 50% 50%, #373A42 0%, #000000 100%);
+	}
+  
+  // -----------------------------------------------------------------------------
+  // This file contains all application-wide Sass mixins.
+  // -----------------------------------------------------------------------------
+  /// Event wrapper
+  /// @author Harry Roberts
+  /// @param {Bool} $self [false] - Whether or not to include current selector
+  /// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+  @mixin on-event($self: false) {
+	@if $self {
+		&,
+		&:hover,
+		&:active,
+		&:focus {
+			@content;
+		}
+	}
+	@else {
+		&:hover,
+		&:active,
+		&:focus {
+			@content;
+		}
+	}
+  }
+  
+  @mixin hover {
+	&:hover {
+		-webkit-transform: scale(1, 1);
+		transform: scale(1, 1);
+	
+	}
+	&:hover::after {
+		opacity: 1 !important;
+		z-index: 99;
+
+
+	}
+  }
+  /// Breakpoints map
+  /// @prop {String} keys - Keys are identifiers mapped to a given length
+  /// @prop {Map} values - Values are actual breakpoints expressed in pixels
+  $breakpoints: ( 'small': 320px, 'medium': 768px, 'large': 1024px, );
+
+/*
+  @mixin transition($time) {
+	-webkit-transition: all $time ease;
+	-moz-transition: all $time ease;
+	-ms-transition: all $time ease;
+	-o-transition: all $time ease;
+	transition: all $time ease;
+  }*/
+  
+  @mixin scale($scale) {
+	-webkit-transform: ($scale);
+	-moz-transform: ($scale);
+	-ms-transform: ($scale);
+	-o-transform: ($scale);
+	transform: ($scale);
+  } 
+  
+  @mixin transform($xtime, $ytime) {
+	transform: translate(#{$xtime}, #{$ytime});
+	-moz-transform: translate(#{$xtime}, #{$ytime});
+	-webkit-transform: translate(#{$xtime}, #{$ytime});
+	-o-transform: translate(#{$xtime}, #{$ytime});
+  }
+  
+  @mixin transformX($time) {
+	transform: translateX(#{$time});
+	-moz-transform: translateX(#{$time});
+	-webkit-transform: translateX(#{$time});
+	-o-transform: translateX(#{$time});
+  }
+  
+  
+  @mixin transformY($time) {
+	transform: translateY(#{$time});
+	-moz-transform: translateY(#{$time});
+	-webkit-transform: translateY(#{$time});
+	-o-transform: translateY(#{$time});
+  }
+  
+  
+  @mixin  font($name, $weight:400) {
+	font-family: #{$name};
+	font-weight: #{$weight};
+  }
+  
+  
+
+	
+	 
+	
+   
+	 
+	 @mixin bg-size-cover {
+	   -webkit-background-size: cover;
+	   -moz-background-size: cover;
+	   -o-background-size: cover;
+	   background-size: cover;
+   
+	 }
+	 
+	 @mixin neu-dark-bg {
+	   @include bg-grad;
+	   @include bg-size-cover;
+	   background-repeat: no-repeat !important;
+	   background-attachment: fixed !important;
+	   color: $light-text-on-dark-bg;
+	   font-family: 'Raleway';
+	   font-weight: 100;
+	 }
+	 
+@mixin breakpoint-between($lower, $upper, $breakpoints: $breakpoints) {
+	$min: breakpoint-min($lower, $breakpoints);
+	$max: breakpoint-max($upper, $breakpoints);
+
+	@media (min-width: $min) and (max-width: $max) {
+		@content;
+	}
+}
+
+/* example usage*/
+
+// @include breakpoint-down(mobile) {
+//	@content
+// }
+// @include breakpoint-down(mobile) {
+//	@content
+// }
+// // @include breakpoint-between(mobile,tablet) {
+//	@content
+// }
+
+
+@mixin border-box {
+    //  border: 1px solid #ffffff;
+   //   box-sizing: border-box;
+   //   -moz-box-sizing: border-box;
+  //    -webkit-box-sizing: border-box;
+  }
+  @mixin border-box-alt {
+      border: 1px solid $purple;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+  }
+  .strokeyhover:hover {
+
+    border: 1px solid #6c5ba7 !important;
+}
+.strokeyhover:focus {
+
+    border: none !important;
+}
+.strokeyhover:active {
+
+    border: none !important;
+}
+
+  @mixin bg-grad {
+    background: radial-gradient(54.85% 46.25% at 50% 50%, #373A42 0%, #000000 100%);
+    @include bg-size-cover;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    color: $light-text-on-dark-bg;
+
+    }
+  
+  
+    @mixin hovers {
+      &:hover {
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+       }
+      &:hover::after {
+        opacity: 1;
+      }
+    }
+  
+  
+  
+  
+  @mixin transition {
+      -moz-transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+      -webkit-transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+      transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+  
+  
+  
+  
+    @mixin bg-size-cover {
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+  
+    @mixin neu-dark-bg {
+      @include bg-grad;
+      @include bg-size-cover;
+      background-repeat: no-repeat !important;
+      background-attachment: fixed !important;
+      color: $light-text-on-dark-bg;
+      font-family: 'Raleway';
+      font-weight: 100;
+    }
+  
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+/// Event wrapper
+/// @author Harry Roberts
+/// @param {Bool} $self [false] - Whether or not to include current selector
+/// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+@mixin on-event($self: false) {
+    @if $self {
+        &,
+        &:hover,
+        &:active,
+        &:focus {
+            @content;
+        }
+    }
+    @else {
+        &:hover,
+        &:active,
+        &:focus {
+            @content;
+        }
+    }
+}
+
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: ( 'small': 320px, 'medium': 768px, 'large': 1024px, );
+@mixin media($media) {
+    @media all and (max-width: #{map-get($breakpoints,#{$media})
+}
+
+) {
+    @content;
+}
+}
+
+@mixin media-width($media-width) {
+    @media all and (max-width: #{$media-width}px) {
+        @content; 
+    }
+}
+/*@mixin transition($time) {
+    -webkit-transition: all $time ease;
+    -moz-transition: all $time ease;
+    -ms-transition: all $time ease;
+    -o-transition: all $time ease;
+    transition: all $time ease;
+}*/
+
+@mixin scale($scale) {
+    -webkit-transform: ($scale);
+    -moz-transform: ($scale);
+    -ms-transform: ($scale);
+    -o-transform: ($scale);
+    transform: ($scale);
+} 
+
+@mixin transform($xtime, $ytime) {
+    transform: translate(#{$xtime}, #{$ytime});
+    -moz-transform: translate(#{$xtime}, #{$ytime});
+    -webkit-transform: translate(#{$xtime}, #{$ytime});
+    -o-transform: translate(#{$xtime}, #{$ytime});
+}
+
+@mixin transformX($time) {
+    transform: translateX(#{$time});
+    -moz-transform: translateX(#{$time});
+    -webkit-transform: translateX(#{$time});
+    -o-transform: translateX(#{$time});
+}
+
+
+@mixin transformY($time) {
+    transform: translateY(#{$time});
+    -moz-transform: translateY(#{$time});
+    -webkit-transform: translateY(#{$time});
+    -o-transform: translateY(#{$time});
+}
+
+
+@mixin  font($name, $weight:400) {
+    font-family: #{$name};
+    font-weight: #{$weight};
+}
+
+@include breakpoint-down(mobile) {
+	.hidden-xs {
+		display: none !important;
+	}
+	.visible-xs-block {
+		display: block !important;
+	}
+	.visible-xs-inline {
+		display: inline !important;
+	}
+	.visible-xs-inline-block {
+		display: inline-block !important;
+	}
+}
+
+@include breakpoint-between(mobile,tablet) {
+	.hidden-sm {
+		display: none !important;
+	}
+	.visible-sm-block {
+		display: block !important;
+	}
+	.visible-sm-inline {
+		display: inline !important;
+	}
+	.visible-sm-inline-block {
+		display: inline-block !important;
+	}
+}
+
+@include breakpoint-between(tablet,small-desktop) {
+	.hidden-md {
+		display: none !important;
+	}
+	.visible-md-block {
+		display: block !important;
+	}
+	.visible-md-inline {
+		display: inline !important;
+	}
+	.visible-md-inline-block {
+		display: inline-block !important;
+	}
+}
+
+@include breakpoint-up(small-desktop) {
+	.hidden-lg {
+		display: none !important;
+	}
+	.visible-lg-block {
+		display: block !important;
+	}
+	.visible-lg-inline {
+		display: inline !important;
+	}
+	.visible-lg-inline-block {
+		display: inline-block !important;
+	}
+}

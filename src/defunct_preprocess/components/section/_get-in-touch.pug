@@ -1,0 +1,61 @@
+include ../form/_form
+include ../list/_list
+include ../rights/_rights
+
+// Get in touch
+section#contacts.section.section-lg
+	.container
+		.row.row-30.align-items-xl-center.justify-content-xxl-between
+			.col-lg-6
+				h2 Get in Touch
+				p.bigger Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing.
+				form.rd-mailform( data-form-output='form-output-global', data-form-type='contact', method='post', action='components/rd-mailform/rd-mailform.php' )
+					.row.row-30
+						.col-xs-6
+							.form-group
+								input.form-control( type='text', name='name', placeholder='Your name *', data-constraints='@Required' )
+						.col-xs-6
+							.form-group
+								input.form-control( type='email', name='email', placeholder='Your e-mail address *', data-constraints='@Email @Required' )
+						.col-12
+							.form-group
+								textarea.form-control( name='question', placeholder='Your question', rows='5', data-constraints='@Required' )
+					.offset-sm.group-40.d-flex.flex-wrap.flex-xs-nowrap.align-items-center
+						button.btn( type='submit' ) Subscribe
+						+checkbox({ id: 'check1' }) Lorem ipsum dolor sit amet, consectetur adipiscing.
+
+			.col-lg-6.col-xxl-5
+				.box.px-xl-3.px-xxl-4
+					.row.row-30
+						.col-md-6.col-lg-12.col-xl-6
+							h4 Get The App:
+							.group-30.offset-sm
+								a.btn.pl-1( href='#' )
+									span.btn-icon.icon.icon-round.icon-sm.icon-primary.icon-style-3.mdi-apple
+									span Apple Store
+								a.btn.pl-1( href='#' )
+									span.btn-icon.icon.icon-round.icon-sm.icon-primary.icon-style-3.mdi-google-play
+									span Google Play
+						.col-md-6.col-lg-12.col-xl-6
+							h4 Contacts:
+							table.table.table-sm.table-responsive-xl.table-no-bordered.bigger
+								tbody
+									tr
+										td.text-right.text-600.pl-0.align-middle Ph.
+										td.biggest: a.link-inherit( href='tel:#' ) 1-800-901-234
+									tr
+										td.text-right.text-600.pl-0 Mail.
+										td: a.link-inherit( href='mailto:#' ) info@demolink.org
+									tr
+										td.text-right.text-600.pl-0 Office.
+										td Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+					hr.divider
+
+					.group-20.d-flex.flex-wrap.align-items-center.justify-content-between
+						div
+							+list-social
+						div
+							+rights.bigger
+
+	#form-output-global.form-output.snackbar.snackbar-secondary

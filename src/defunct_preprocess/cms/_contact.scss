@@ -1,0 +1,50 @@
+// start contact page stylesheet
+textarea,
+input:not([type="submit"]){
+	padding: 11px 15px;
+	width: 100%;
+	border: 1px solid $border;
+	color: $white;
+	background: transparent;
+	font-size: 14px;
+	@include font($libre);
+}
+
+input[type="submit"]{
+	font-size: 16px;
+	color: $white;
+	background: $red;
+	@include font($oswald);
+	border: 0;
+	padding: 10px 30px;
+	cursor: pointer;
+	text-transform: uppercase;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	-ms-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	&:hover{
+		background: $redhover;
+	}
+}
+
+.contact-item{
+	position: relative;
+	padding-left: 30px;
+	font-size: 16px;
+	line-height: 1.3;
+	i{
+		position: absolute;
+		left: 0;
+		top: 1px;
+	}
+}
+
+.delas-map{
+	border: 8px solid $dark;
+}
+
+.full-post-contents {
+    padding: 10px;
+    margin-top: 80px;
+}

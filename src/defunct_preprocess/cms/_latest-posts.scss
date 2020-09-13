@@ -1,0 +1,80 @@
+// latest post card
+.ln-card {
+    &.no-feature-image {
+        .card-content {
+            margin-top: 0;
+            width: 100%;
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+    }
+    .card-img {
+        img {
+            width: 100%;
+        }
+    }
+    .card-content {
+        background: $black-pearl;
+        position: relative;
+        margin-top: -12%;
+        width: 90%;
+        padding: 50px 20px 20px;
+        -webkit-clip-path: polygon(0 30px, 100% 0, 100% 100%, 0% 100%);
+        clip-path: polygon(0 30px, 100% 0, 100% 100%, 0% 100%);
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 0;
+        }
+        p {
+            font-size: 16px;
+        }
+    }
+    .top-author-meta {
+        position: relative;
+        padding-bottom: 10px;
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            border-bottom: 2px solid $red;
+            width: 40px;
+            bottom: 0;
+        }
+    }
+    .card-title {
+        margin: 0;
+        color: $white;
+        &:hover {
+            color: $red;
+        }
+    }
+    .share-icon {
+        background: rgba($white, 0.08);
+    }
+}
+
+.latest-news {
+    position: relative;
+    .owl-nav {
+        position: absolute;
+        bottom: calc(100% + 43px);
+        .owl-prev {
+            margin-right: 20px;
+        }
+        .disabled {
+            opacity: 0.3;
+        }
+    }
+}
+
+.all-news-sec {
+    background: inear-gradient(180deg, #1f2a31 0%, #1e272e 100%);
+}
+
+.all-news {
+    margin-bottom: 30px;
+}

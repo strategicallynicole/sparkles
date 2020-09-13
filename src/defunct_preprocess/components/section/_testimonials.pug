@@ -1,0 +1,66 @@
+include ../quote/_quote
+
+// What People Say
+section.section.section-lg
+	.container
+		h2.text-center What People Say
+		.row.row-offset-lg.justify-content-center
+			.col-lg-10.col-xl-9.col-xxl-8
+				.owl-carousel.owl-visible(
+				data-owl={
+					dots: true,
+					margin: 60,
+					responsive: {
+						1200: {
+							margin: 110
+						},
+						1600: {
+							margin: 160
+						}
+					}
+				} )
+					+quote-creative({
+						name:    'John Doue',
+						time: {
+							date: '2020',
+							text: 'Jan 10, 2020'
+						},
+						text:    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Website templates are available in Photoshop and HTML formats. Fonts are included with the Photoshop file.',
+						company: 'SEO “Company”'
+					})
+					+quote-creative({
+						name:    'Kevin McMillan',
+						time: {
+							date: '2020',
+							text: 'Jan 10, 2020'
+						},
+						text:    'With the help of Neon, getting routine tasks done is a lot easier now. Their unique tools allow me to pay more attention to other vital processes rather than various tasks that don’t require my constant intervention.',
+						company: 'Founder, “2M Analytics”'
+					})
+					+quote-creative({
+						name:    'Eva Adams',
+						time: {
+							date: '2020',
+							text: 'Jan 10, 2020'
+						},
+						text:    'Your app is the best choice for my business and I have tried a lot of workflow management apps before. Your product satisfies the needs of my company and its employees to the fullest extent, especially in HR management. Thank you!',
+						company: 'Regional Manager, “HMZ Ltd.”'
+					})
+					+quote-creative({
+						name:    'John Williams',
+						time: {
+							date: '2020',
+							text: 'Jan 10, 2020'
+						},
+						text:    'Neon is absolutely delightful! I use it for managing my current business projects and it gives amazing results. It has everything for proper time management & project development, and a lot more, which is just what I need for my business.',
+						company: 'CEO, “iStep”'
+					})
+					+quote-creative({
+						name:    'Kate Richards',
+						time: {
+							date: '2020',
+							text: 'Jan 10, 2020'
+						},
+						text:    'Your app has everything our company needs for managing the work of our branch offices and international departments. Neon allowed us to achieve better results in managing wholesale process and developing better products for our clients.',
+						company: 'Sales Manager, “Evolve Co.”'
+					})

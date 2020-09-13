@@ -1,0 +1,69 @@
+// Intro
+section#home.section
+	.swiper-container.swiper-pagination-minimal(
+		data-swiper!= {
+			scrollbar: {
+				el: ''
+			},
+			autoplay: {
+				delay:                5000,
+				disableOnInteraction: false
+			},
+			breakpoints: {
+				320: {
+					autoplay: false
+				},
+				1200: {
+					autoplay: {
+						delay: 5000,
+						disableOnInteraction: false
+					}
+				}
+			}
+		} )
+		.bg-layer.d-flex.align-items-end
+			svg.image-svg(width='1920', height='792', viewBox='0 0 1920 792', fill='none')
+				path(d='M155.44 227.32H227.26V523H155.44L35.32 336.94V523H-36.5V227.32H35.32L155.44 413.38V227.32ZM389.935 525.94C355.775 525.94 327.775 515.02 305.935 493.18C284.095 471.06 273.175 441.8 273.175 405.4C273.175 369 283.955 340.02 305.515 318.46C327.355 296.9 355.495 286.12 389.935 286.12C424.375 286.12 452.935 296.76 475.615 318.04C498.295 339.32 509.635 368.86 509.635 406.66C509.635 414.78 509.075 422.34 507.955 429.34H346.675C348.075 439.7 352.695 448.24 360.535 454.96C368.375 461.4 376.775 464.62 385.735 464.62C394.975 464.62 401.835 463.78 406.315 462.1C410.795 460.14 414.015 458.32 415.975 456.64C418.215 454.68 421.015 451.6 424.375 447.4H502.075C495.355 470.92 481.915 489.96 461.755 504.52C441.595 518.8 417.655 525.94 389.935 525.94ZM434.875 384.4C433.755 373.48 428.995 364.66 420.595 357.94C412.195 350.94 402.255 347.44 390.775 347.44C379.295 347.44 369.635 350.94 361.795 357.94C353.955 364.66 349.055 373.48 347.095 384.4H434.875ZM696.466 449.5C705.986 439.42 710.746 424.86 710.746 405.82C710.746 386.78 705.846 372.36 696.046 362.56C686.246 352.48 674.626 347.44 661.186 347.44C647.746 347.44 636.126 352.48 626.326 362.56C616.806 372.36 612.046 386.78 612.046 405.82C612.046 424.86 616.946 439.42 626.746 449.5C636.826 459.58 648.586 464.62 662.026 464.62C675.466 464.62 686.946 459.58 696.466 449.5ZM574.246 492.76C550.726 470.64 538.966 441.52 538.966 405.4C538.966 369.28 550.726 340.44 574.246 318.88C597.766 297.04 626.886 286.12 661.606 286.12C696.326 286.12 725.306 297.04 748.546 318.88C772.066 340.44 783.826 369.28 783.826 405.4C783.826 441.52 772.206 470.64 748.966 492.76C725.726 514.88 696.746 525.94 662.026 525.94C627.306 525.94 598.046 514.88 574.246 492.76ZM901.98 288.64V323.08C916.82 298.44 940.48 286.12 972.96 286.12C999.84 286.12 1021.54 295.08 1038.06 313C1054.86 330.92 1063.26 355.28 1063.26 386.08V523H991.86V395.74C991.86 380.62 987.8 369 979.68 360.88C971.84 352.48 960.92 348.28 946.92 348.28C932.92 348.28 921.86 352.48 913.74 360.88C905.9 369 901.98 380.62 901.98 395.74V523H830.16V288.64H901.98Z', fill='url(#paint0_linear)')
+				path(opacity='0.03', d='M1245 671.5H0V792H1920V0.5H1450C1392.01 0.5 1345 47.5101 1345 105.5V571.5C1345 626.728 1300.23 671.5 1245 671.5Z', fill='white')
+				circle(cx='509', cy='121', r='18', fill='#45494B')
+				circle(cx='367.5', cy='138.5', r='9.5', fill='#6c5ba7')
+				circle(cx='526.5', cy='431.5', r='6.5', fill='#78C5D6')
+				defs
+					lineargradient#paint0_linear(x1='-30.2098', y1='414', x2='1076.2', y2='412.898', gradientUnits='userSpaceOnUse')
+						stop(offset='0', stop-color='#323436')
+						stop(offset='1', stop-color='#282A2D')
+		.swiper-wrapper
+			.swiper-slide.section-lg
+				.container
+					.row.align-items-center.justify-content-lg-between.flex-md-row-reverse
+						.col-8.col-md-5.col-lg-7.text-right
+							+img( 'image-01-827x730.png' )
+						.col-md-7.col-lg-5.col-xxl-4
+							h1 #1 Everyday Application
+							.offset-xxs
+								p.biggest Welcome to Neon, an award-winning & easy-to-use mobile application that revolutionizes your daily work tasks.
+							.offset-sm
+								button.btn( data-modal-trigger!={ target: '#modal-login' } ) Start Using for Free
+			.swiper-slide.section-lg
+				.container
+					.row.align-items-center.justify-content-lg-between.flex-md-row-reverse
+						.col-7.col-md-5.col-xxl-7.text-center
+							+img( 'image-02-573x615.png' ).ml-xxl-4
+						.col-md-7.col-lg-6.col-xxl-4
+							h1 Do More Tasks with Neon
+							.offset-xxs
+								p.biggest Our app was designed to let you manage your time more effectively. Also, it is a great personal companion for every smartphone user.
+							.offset-sm
+								button.btn( data-modal-trigger!={ target: '#modal-login' } ) Start Using for Free
+			.swiper-slide.section-lg
+				.container
+					.row.align-items-center.justify-content-md-between.flex-md-row-reverse
+						.col-5.col-md-4.col-lg-4.col-xxl-7.text-center
+							+img( 'image-03-451x630.png' ).mb-xxl-3
+						.col-md-7.col-lg-6.col-xxl-4
+							h1 Awesome Performance
+							.offset-xxs
+								p.biggest Neon delivers high performance and a variety of features that you’ll surely appreciate even if you use a budget-class device.
+							.offset-sm
+								button.btn( data-modal-trigger!={ target: '#modal-login' } ) Start Using for Free
+		.swiper-pagination( data-pagination-ordered )

@@ -1,0 +1,74 @@
+
+
+.portfolio-card{
+	position: relative;
+	.card-img{
+		display: block;
+		img{
+			width: 100%;
+		}
+	}
+	.card-content{
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		display: flex;
+		justify-content: flex-end;
+		flex-direction: column;
+		padding: 20px;
+		background: rgba($lightgray, .8);
+		@include scale(scale(.5));
+		@include transition(.3s);
+		opacity: 0;
+		h1, h2, h3, h4, h5, h6{
+			margin: 0;
+		}
+	}
+	.card-title{
+		color: $white;
+		&:hover{
+			color: $red;
+		}
+	}
+	&:hover{
+		.card-content{
+			opacity: 1;
+			@include scale(scale(1));
+		}
+	}
+	.top-author-meta{
+		position: relative;
+		padding-bottom: 10px;
+		&::before{
+			content: "";
+			position: absolute;
+			left: 0;
+			border-bottom: 2px solid $red;
+			width: 40px;
+			bottom: 0;
+		}
+	}
+}
+
+.wrap-portfolio-2{
+	.ln-card{
+		position: relative;
+		overflow: hidden;
+		.card-content{
+			position: absolute;
+			left: 0;
+			bottom: -100%;
+			@include transition(.4s);
+			opacity: 0;
+		}
+		&:hover{
+			.card-content{
+				bottom: 0;
+				opacity: 1;
+			}
+		}
+	}
+}
+
