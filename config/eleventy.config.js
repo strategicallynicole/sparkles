@@ -2,10 +2,9 @@ const path = require("path");
 const paths = require("./paths");
 const pug = require("pug");
 const nunjucks = require("nunjucks");
-
 const projectVars = require("../src/11ty/_data/project");
 const pluginPWA = require("eleventy-plugin-pwa");
-require("dotenv").config();
+require("dotenv").config('./.env');
 const cleanCSS = require("clean-css");
 const fs = require("fs");
 const pluginRSS = require("@11ty/eleventy-plugin-rss");
@@ -14,7 +13,7 @@ const lazyImages = require("eleventy-plugin-lazyimages");
 const ghostContentAPI = require("@tryghost/content-api");
 const Handlebars = require("handlebars");
 const htmlMinTransform = require("./transforms/html-min-transform.js");
-const url = "http://localhost:8080";
+const url = "";
 const sass = require('./sass-process');
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 //Watching for modificaions in style directory
@@ -40,9 +39,9 @@ module.exports = function(config) {
 
 
     // Apply performance attributes to images
-    config.addPlugin(lazyImages, {
-        cacheFile: ""
-    });
+    //config.addPlugin(lazyImages, {
+   //     cacheFile: ""
+   // });
 
     // Minify HTML
     config.addTransform("htmlmin", htmlMinTransform);
@@ -62,11 +61,28 @@ module.exports = function(config) {
     // Copy images over from Ghost
     config.addPlugin(localImages, {
         distPath: "dist",
-        assetPath: "assets/img",
+        assetPath: "/content/images",
         selector: "img",
         attribute: "data-src",
-        verbose: false
+        verbose: true
     });
+
+      
+   
+    config.addFilter('assetPath', function(value) {
+        if (process.env.ELEVENTY_ENV === 'production') {
+            const manifestPath = path.resolve(
+                __dirname,
+                outputDir,
+                assetDir,
+                'manifest.json'
+            );
+            const manifest = JSON.parse(fs.readFileSync(manifestPath));
+            return `/${assetDir}/${manifest[value]}`;
+        }
+        return `/${assetDir}/${value}`;
+    });
+
 
     // Inline CSS
     config.addFilter("cssmin", code => {
@@ -81,7 +97,7 @@ module.exports = function(config) {
 
     // Date formatting filter
     config.addFilter("htmlDateString", dateObj => {
-        return new Date(dateObj).toISOString().split("T")[0];
+        return dateObj;
     });
 
     // Don't ignore the same files ignored in the git repo
@@ -115,7 +131,7 @@ module.exports = function(config) {
     config.addCollection("posts", async function(collection) {
         collection = await api.posts
             .browse({
-                include: "tags,authors",
+                include: "tags,authors,feature_image",
                 limit: "all"
             })
             .catch(err => {
@@ -124,6 +140,8 @@ module.exports = function(config) {
 
         collection.forEach(post => {
             post.url = stripDomain(post.url);
+            if (post.feature_image != null){
+            post.feature_image = stripDomain(post.feature_image);}
             post.primary_author.url = stripDomain(post.primary_author.url);
             post.tags.map(tag => (tag.url = stripDomain(tag.url)));
 

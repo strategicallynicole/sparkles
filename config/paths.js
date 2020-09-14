@@ -1,6 +1,9 @@
 const path = require("path");
-const ROOT_DIR = process.cwd();
+//const ROOT_DIR = process.cwd();
+const ROOT_DIR = "http://localhost:8080";
+const SITE_URL = "http://localhost:8080";
 
+//const ROOT_DIR = process.cwd();
 const SRC = "src/";
 const ASSETS = "assets/";
 const DIST = "dist/";
