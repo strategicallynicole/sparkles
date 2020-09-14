@@ -19,6 +19,8 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 //Watching for modificaions in style directory
 /*sass('src/preprocess/neu.scss', 'dist/assets/css/neu.css');*/
 sass('./src/assets/components/base/base.scss', './dist/assets/css/base.css');
+sass('./src/assets/neu/style.scss', './dist/assets/css/style.css');
+
 const outputDir = 'dist';
 //const assetDir = 'assets';
 // Init Ghost API
@@ -239,6 +241,10 @@ module.exports = function(config) {
     config.addPassthroughCopy({ "src/assets/components": "assets/components" });
     config.addPassthroughCopy({ "src/media": "media" });
     config.addPassthroughCopy({ "src/assets": "assets" });
+    config.addPassthroughCopy({ "src/assets/vendor": "assets/vendor" });
+    config.addPassthroughCopy({ "src/assets/js": "assets/js" });
+
+
     const {
         DateTime
       } = require("luxon");
