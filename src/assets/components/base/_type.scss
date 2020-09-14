@@ -164,6 +164,8 @@ h6,
 .h5,
 .h6 {
     color: #efefef;
+    font-family: 'Oswald';
+    text-transform: uppercase;
 }
 
 ul,
@@ -171,7 +173,10 @@ ol {
     list-style: disc;
 }
 
-// Headings
+
+
+    
+    // Headings
 #{headings()} {
     margin: 0;
     a {

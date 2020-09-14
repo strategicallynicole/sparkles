@@ -70,7 +70,10 @@ $navigation-size: 44px;
   background-position: 50%;
 	transition-property: transform;
 }
-
+.miniswiper {
+	max-width: 50% !important;
+	margin-left: 5% !important;
+}
 html:not( .ie-11 ) {
 	.swiper-slide {
 		justify-content: center;

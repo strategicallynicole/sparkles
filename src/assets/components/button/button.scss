@@ -5,13 +5,18 @@
 @import "../bootstrap/scss/mixins";
 @import "../bootstrap/scss/button-group";
 
-
+.smallbtn {
+	width: 60% !important;
+}
 // Variables
 $btn-gradient-color:   #2D3135;
 $btn-gradient-color-1: #3E4248;
 $btn-gradient-color-2: #2A2E32;
 $btn-gradient-color-3: #313437;
 
+#sidebar ul li a {
+    margin: 0 auto;
+}
 
 // Base
 .btn {

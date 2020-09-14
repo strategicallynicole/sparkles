@@ -10,9 +10,15 @@ nav#sidebar
 		//		a(class="effect-shine site-nav-button" href=doc.url) #{doc.title}
 		a#toggler.dropdown-toggle(href="#pagesSubmenu" data-toggle="collapse" aria-expanded="true") Services
 			ul#pagesSubmenu.collapse.list-unstyled
-				li Strategy
-				li Branding
-
+				.submenustyle
+					li Strategy
+					li Branding
+			.dropdown click me
+				ul
+					li
+						a Red
+					li
+						a Blue
 		each post in collections.posts.slice(0,1)									
 			li
 				include mini-card.pug

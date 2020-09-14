@@ -10,132 +10,15 @@ components.fonts = {
 
 components.mdi = {
 	selector: '[class*="mdi"]',
-	styles: './components/mdi/mdi.css'
-};
-
-components.grid = {
-	selector: '.container, .container-fluid, .row, [class*="col-"]',
-	styles: './components/grid/grid.css'
-};
-
-components.block = {
-	selector: '.block',
-	styles: './components/block/block.css'
-};
-
-components.blurb = {
-	selector: '.blurb',
-	styles: [
-		'./components/media/media.css',
-		'./components/blurb/blurb.css'
-	]
-};
-
-components.box = {
-	selector: '.box',
-	styles: './components/box/box.css'
-};
-
-components.button = {
-	selector: '.btn, .btn-group',
-	styles: './components/button/button.css'
-};
-
-components.divider = {
-	selector: '.divider',
-	styles: './components/divider/divider.css'
-};
-
-components.form = {
-	selector: '.form-group, .input-group, .form-check, .custom-control, .form-control',
-	styles: './components/form/form.css'
-};
-
-components.formOutput = {
-	selector: '.form-output',
-	styles:   './components/form-output/form-output.css'
-};
-
-components.icon = {
-	selector: '.icon',
-	styles: './components/icon/icon.css'
-};
-
-components.imageSvg = {
-	selector: '.image-svg',
-	styles: './components/image-svg/image-svg.css'
-};
-
-components.list = {
-	selector: '.list',
-	styles: './components/list/list.css'
-};
-
-components.media = {
-	selector: '.media',
-	styles: './components/media/media.css'
-};
-
-components.partner = {
-	selector: '.partner',
-	styles: './components/partner/partner.css'
-};
-
-components.post = {
-	selector: '.post, .post-modern',
-	styles: './components/post/post.css'
-};
-
-components.pricing = {
-	selector: '.pricing, .pricing-modern',
-	styles: './components/pricing/pricing.css'
-};
-
-components.quote = {
-	selector: '.quote',
-	styles: [
-		'./components/media/media.css',
-		'./components/quote/quote.css'
-	]
-};
-
-components.rights = {
-	selector: '.rights',
-	styles: './components/rights/rights.css'
-};
-
-components.section = {
-	selector: 'section',
-	styles: './components/section/section.css'
-};
-
-components.snackbar = {
-	selector: '.snackbar',
-	styles: './components/snackbar/snackbar.css'
-};
-
-components.table = {
-	selector: '.table',
-	styles: './components/table/table.css'
-};
-
-components.team = {
-	selector: '.team, .team-mini',
-	styles: './components/team/team.css'
-};
-
-components.video = {
-	selector: '.video',
-	styles: './components/video/video.css'
+	styles: '/assets/components/mdi/mdi.css'
 };
 
 components.accordion = {
 	selector: '.accordion',
-	styles: './components/accordion/accordion.css',
 	script: [
-		'./components/jquery/jquery.min.js',
-		'./components/current-device/current-device.min.js',
-		'./components/multiswitch/multiswitch.min.js'
+		'/assets/components/jquery/jquery.min.js',
+		'/assets/components/current-device/current-device.min.js',
+		'/assets/components/multiswitch/multiswitch.min.js'
 	],
 	init: function ( nodes ) {
 		nodes.forEach( function ( node ) {
@@ -174,8 +57,7 @@ components.accordion = {
 
 components.animate = {
 	selector: '[data-animate]',
-	styles: './components/animate/animate.css',
-	script: './components/current-device/current-device.min.js',
+	script: '/assets/components/current-device/current-device.min.js',
 	init: function ( nodes ) {
 		let observer = new IntersectionObserver( function ( entries, observer ) {
 			entries.forEach( function ( entry ) {
@@ -205,10 +87,9 @@ components.animate = {
 
 components.countdown = {
 	selector: '[data-countdown]',
-	styles: './components/countdown/countdown.css',
 	script: [
-		'./components/progress-circle/progress-circle.min.js',
-		'./components/countdown/countdown.min.js'
+		'/assets/components/progress-circle/progress-circle.min.js',
+		'/assets/components/countdown/countdown.min.js'
 	],
 	init: function ( nodes ) {
 		nodes.forEach( function ( node ) {
@@ -225,8 +106,7 @@ components.countdown = {
 
 components.counter = {
 	selector: '[data-counter]',
-	styles: './components/counter/counter.css',
-	script: './components/counter/counter.min.js',
+	script: '/assets/components/counter/counter.min.js',
 	init: function ( nodes ) {
 		let observer = new IntersectionObserver( function ( entries, observer ) {
 			entries.forEach( function ( entry ) {
@@ -261,9 +141,9 @@ components.counter = {
 // components.blotter = {
 // 	selector: '#blotter',
 // 	script: [
-// 		'./components/jquery/jquery.min.js',
-// 		'./components/blotter/blotter.min.js',
-// 		'./components/blotter/liquidDistortMaterial.js'
+// 		'/assets/components/jquery/jquery.min.js',
+// 		'/assets/components/blotter/blotter.min.js',
+// 		'/assets/components/blotter/liquidDistortMaterial.js'
 // 	],
 // 	init: function () {
 // 		let text = new Blotter.Text( 'observation', {
@@ -299,16 +179,15 @@ components.counter = {
 // TODO move to blurb component
 components.currentDevice = {
 	selector: 'html',
-	script: './components/current-device/current-device.min.js'
+	script: '/assets/components/current-device/current-device.min.js'
 };
 
 components.fullpage = {
 	selector: '.fullpage',
-	styles: './components/fullpage/fullpage.css',
 	script: [
-		'./components/jquery/jquery.min.js',
-		'./components/fullpage/fullpage.min.js',
-		'./components/util/util.min.js'
+		'/assets/components/jquery/jquery.min.js',
+		'/assets/components/fullpage/fullpage.min.js',
+		'/assets/components/util/util.min.js'
 	],
 	init: function ( nodes ) {
 		nodes.forEach( function ( node ) {
@@ -390,11 +269,10 @@ components.fullpage = {
 
 components.imageHover = {
 	selector: '.image-hover',
-	styles: './components/image-hover/image-hover.css',
 	script: [
 		'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js',
-		'./components/image-hover/three.min.js',
-		'./components/image-hover/hover.js'
+		'/assets/components/image-hover/three.min.js',
+		'/assets/components/image-hover/hover.js'
 	],
 	init: function ( nodes ) {
 		nodes.forEach( function ( node ) {
@@ -417,10 +295,9 @@ components.imageHover = {
 
 components.lightgallery = {
 	selector: '[data-lightgallery]',
-	styles: './components/lightgallery/lightgallery.css',
 	script: [
-		'./components/jquery/jquery.min.js',
-		'./components/lightgallery/lightgallery.min.js'
+		'/assets/components/jquery/jquery.min.js',
+		'/assets/components/lightgallery/lightgallery.min.js'
 	],
 	init: function ( nodes ) {
 		if ( !window.xMode ) {
@@ -465,11 +342,10 @@ components.modalBtn = {
 
 components.modal = {
 	selector: '.modal',
-	styles: './components/modal/modal.css',
 	script: [
-		'./components/jquery/jquery.min.js',
-		'./components/bootstrap/js/popper.min.js',
-		'./components/bootstrap/js/bootstrap.min.js'
+		'/assets/components/jquery/jquery.min.js',
+		'/assets/components/bootstrap/js/popper.min.js',
+		'/assets/components/bootstrap/js/bootstrap.min.js'
 	],
 	init: function ( nodes ) {
 		nodes.forEach( function ( node ) {
@@ -483,10 +359,9 @@ components.modal = {
 
 components.multiswitch = {
 	selector: '[data-multi-switch]',
-	styles: './components/multiswitch/multiswitch.css',
 	script: [
-		'./components/current-device/current-device.min.js',
-		'./components/multiswitch/multiswitch.min.js'
+		'/assets/components/current-device/current-device.min.js',
+		'/assets/components/multiswitch/multiswitch.min.js'
 	],
 	dependencies: 'rdNavbar',
 	init: function ( nodes ) {
@@ -509,11 +384,10 @@ components.multiswitch = {
 
 components.nav = {
 	selector: '.nav',
-	styles: './components/nav/nav.css',
 	script: [
-		'./components/jquery/jquery.min.js',
-		'./components/bootstrap/js/popper.min.js',
-		'./components/bootstrap/js/bootstrap.min.js'
+		'/assets/components/jquery/jquery.min.js',
+		'/assets/components/bootstrap/js/popper.min.js',
+		'/assets/components/bootstrap/js/bootstrap.min.js'
 	],
 	init: function ( nodes ) {
 		nodes.forEach( function ( node ) {
@@ -531,11 +405,10 @@ components.nav = {
 
 components.owl = {
 	selector: '.owl-carousel',
-	styles: './components/owl-carousel/owl.carousel.css',
 	script: [
-		'./components/jquery/jquery.min.js',
-		'./components/owl-carousel/owl.carousel.min.js',
-		'./components/util/util.min.js'
+		'/assets/components/jquery/jquery.min.js',
+		'/assets/components/owl-carousel/owl.carousel.min.js',
+		'/assets/components/util/util.min.js'
 	],
 	init: function ( nodes ) {
 		nodes.forEach( function ( node ) {
@@ -582,298 +455,14 @@ components.pageReveal = {
 	}
 };
 
-components.rdMailform = {
-	selector: '.rd-mailform',
-	styles: [
-		'./components/rd-mailform/rd-mailform.css',
-		'./components/font-awesome/font-awesome.css',
-		'./components/mdi/mdi.css'
-	],
-	script: [
-		'./components/jquery/jquery.min.js',
-		'./components/rd-mailform/rd-mailform.min.js',
-	],
-	init: function ( nodes ) {
-		let i, j, k,
-			$captchas = $( nodes ).find( '.recaptcha' ),
-			msg = {
-				'MF000': 'Successfully sent!',
-				'MF001': 'Recipients are not set!',
-				'MF002': 'Form will not work locally!',
-				'MF003': 'Please, define email field in your form!',
-				'MF004': 'Please, define type of your form!',
-				'MF254': 'Something went wrong with PHPMailer!',
-				'MF255': 'Aw, snap! Something went wrong.'
-			};
-
-		if ( $captchas.length ) {
-			$.getScript("//www.google.com/recaptcha/api.js?onload=onloadCaptchaCallback&render=explicit&hl=en");
-		}
-
-		/**
-		 * @desc Check if all elements pass validation
-		 * @param {object} elements - object of items for validation
-		 * @param {object} captcha - captcha object for validation
-		 * @return {boolean}
-		 */
-		function isValidated(elements, captcha) {
-			let results, errors = 0;
-
-			if (elements.length) {
-				for (let j = 0; j < elements.length; j++) {
-
-					let $input = $(elements[j]);
-					if ((results = $input.regula('validate')).length) {
-						for (k = 0; k < results.length; k++) {
-							errors++;
-							$input.siblings(".form-validation").text(results[k].message).parent().addClass("has-error");
-						}
-					} else {
-						$input.siblings(".form-validation").text("").parent().removeClass("has-error");
-					}
-				}
-
-				if (captcha) {
-					if (captcha.length) {
-						return validateReCaptcha(captcha) && errors === 0
-					}
-				}
-
-				return errors === 0;
-			}
-			return true;
-		}
-
-		/**
-		 * @desc Validate google reCaptcha
-		 * @param {object} captcha - captcha object for validation
-		 * @return {boolean}
-		 */
-		function validateReCaptcha(captcha) {
-			let captchaToken = captcha.find('.g-recaptcha-response').val();
-
-			if (captchaToken.length === 0) {
-				captcha
-					.siblings('.form-validation')
-					.html('Please, prove that you are not robot.')
-					.addClass('active');
-				captcha
-					.closest('.form-wrap')
-					.addClass('has-error');
-
-				captcha.on('propertychange', function () {
-					let $this = $(this),
-						captchaToken = $this.find('.g-recaptcha-response').val();
-
-					if (captchaToken.length > 0) {
-						$this
-							.closest('.form-wrap')
-							.removeClass('has-error');
-						$this
-							.siblings('.form-validation')
-							.removeClass('active')
-							.html('');
-						$this.off('propertychange');
-					}
-				});
-
-				return false;
-			}
-
-			return true;
-		}
-
-		/**
-		 * @desc Initialize Google reCaptcha
-		 */
-		window.onloadCaptchaCallback = function () {
-			for (let i = 0; i < $captchas.length; i++) {
-				let
-					$captcha = $($captchas[i]),
-					resizeHandler = (function() {
-						let
-							frame = this.querySelector( 'iframe' ),
-							inner = this.firstElementChild,
-							inner2 = inner.firstElementChild,
-							containerRect = null,
-							frameRect = null,
-							scale = null;
-
-						inner2.style.transform = '';
-						inner.style.height = 'auto';
-						inner.style.width = 'auto';
-
-						containerRect = this.getBoundingClientRect();
-						frameRect = frame.getBoundingClientRect();
-						scale = containerRect.width/frameRect.width;
-
-						if ( scale < 1 ) {
-							inner2.style.transform = 'scale('+ scale +')';
-							inner.style.height = ( frameRect.height * scale ) + 'px';
-							inner.style.width = ( frameRect.width * scale ) + 'px';
-						}
-					}).bind( $captchas[i] );
-
-				grecaptcha.render(
-					$captcha.attr('id'),
-					{
-						sitekey: $captcha.attr('data-sitekey'),
-						size: $captcha.attr('data-size') ? $captcha.attr('data-size') : 'normal',
-						theme: $captcha.attr('data-theme') ? $captcha.attr('data-theme') : 'light',
-						callback: function () {
-							$('.recaptcha').trigger('propertychange');
-						}
-					}
-				);
-
-				$captcha.after("<span class='form-validation'></span>");
-
-				if ( $captchas[i].hasAttribute( 'data-auto-size' ) ) {
-					resizeHandler();
-					window.addEventListener( 'resize', resizeHandler );
-				}
-			}
-		};
-
-		for ( i = 0; i < nodes.length; i++ ) {
-			let
-				$form = $(nodes[i]),
-				formHasCaptcha = false;
-
-			$form.attr('novalidate', 'novalidate').ajaxForm({
-				data: {
-					"form-type": $form.attr("data-form-type") || "contact",
-					"counter": i
-				},
-				beforeSubmit: function (arr, $form, options) {
-					let
-						form = $(nodes[this.extraData.counter]),
-						inputs = form.find("[data-constraints]"),
-						output = $("#" + form.attr("data-form-output")),
-						captcha = form.find('.recaptcha'),
-						captchaFlag = true;
-
-					output.removeClass("active error success");
-
-					if (isValidated(inputs, captcha)) {
-
-						// veify reCaptcha
-						if (captcha.length) {
-							let captchaToken = captcha.find('.g-recaptcha-response').val(),
-								captchaMsg = {
-									'CPT001': 'Please, setup you "site key" and "secret key" of reCaptcha',
-									'CPT002': 'Something wrong with google reCaptcha'
-								};
-
-							formHasCaptcha = true;
-
-							$.ajax({
-								method: "POST",
-								url: "components/rd-mailform/reCaptcha.php",
-								data: {'g-recaptcha-response': captchaToken},
-								async: false
-							})
-								.done(function (responceCode) {
-									if (responceCode !== 'CPT000') {
-										if (output.hasClass("snackbar")) {
-											output.html('<div class="snackbar-inner"><div class="snackbar-title"><span class="icon snackbar-icon mdi-check"></span>'+ captchaMsg[responceCode] +'</div></div>');
-
-											setTimeout(function () {
-												output.removeClass("active");
-											}, 3500);
-
-											captchaFlag = false;
-										} else {
-											output.html(captchaMsg[responceCode]);
-										}
-
-										output.addClass("active");
-									}
-								});
-						}
-
-						if (!captchaFlag) {
-							return false;
-						}
-
-						form.addClass('form-in-process');
-
-						if (output.hasClass("snackbar")) {
-							// output.html('<p><span class="icon text-middle fa fa-circle-o-notch fa-spin icon-xxs"></span><span>Sending</span></p>');
-							output.html('<div class="snackbar-inner"><div class="snackbar-title"><span class="icon snackbar-icon fa-circle-o-notch fa-spin"></span>Sending</div></div>');
-							output.addClass("active");
-						}
-					} else {
-						return false;
-					}
-				},
-				error: function (result) {
-					let output = $("#" + $(nodes[this.extraData.counter]).attr("data-form-output")),
-						form = $(nodes[this.extraData.counter]);
-
-					output.text(msg[result]);
-					form.removeClass('form-in-process');
-
-					if (formHasCaptcha) {
-						grecaptcha.reset();
-					}
-				},
-				success: function (result) {
-					let form = $(nodes[this.extraData.counter]),
-						output = $("#" + form.attr("data-form-output")),
-						select = form.find('select');
-
-					form
-						.addClass('success')
-						.removeClass('form-in-process');
-
-					if (formHasCaptcha) {
-						grecaptcha.reset();
-					}
-
-					result = result.length === 5 ? result : 'MF255';
-					output.text(msg[result]);
-
-					if (result === "MF000") {
-						if (output.hasClass("snackbar")) {
-							output.html('<div class="snackbar-inner"><div class="snackbar-title"><span class="icon snackbar-icon mdi-check"></span>'+ msg[result] +'</div></div>');
-						} else {
-							output.addClass("active success");
-						}
-					} else {
-						if (output.hasClass("snackbar")) {
-							output.html('<div class="snackbar-inner"><div class="snackbar-title"><span class="icon snackbar-icon mdi-alert-outline"></span>'+ msg[result] +'</div></div>');
-						} else {
-							output.addClass("active error");
-						}
-					}
-
-					form.clearForm();
-
-					if (select.length) {
-						select.select2("val", "");
-					}
-
-					form.find('input, textarea').trigger('blur');
-
-					setTimeout(function () {
-						output.removeClass("active error success");
-						form.removeClass('success');
-					}, 3500);
-				}
-			});
-		}
-	}
-};
 
 components.rdNavbar = {
 	selector: '.rd-navbar',
-	styles: './components/rd-navbar/rd-navbar.css',
 	script: [
-		'./components/jquery/jquery.min.js',
-		'./components/util/util.min.js',
-		'./components/current-device/current-device.min.js',
-		'./components/rd-navbar/rd-navbar.min.js'
+		'/assets/components/jquery/jquery.min.js',
+		'/assets/components/util/util.min.js',
+		'/assets/components/current-device/current-device.min.js',
+		'/assets/components/rd-navbar/rd-navbar.min.js'
 	],
 	dependencies: 'currentDevice',
 	init: function ( nodes ) {
@@ -965,11 +554,10 @@ components.rdNavbar = {
 
 components.slick = {
 	selector: '.slick-slider',
-	styles: './components/slick/slick.css',
 	script: [
-		'./components/jquery/jquery.min.js',
-		'./components/slick/slick.min.js',
-		'./components/util/util.min.js'
+		'/assets/components/jquery/jquery.min.js',
+		'/assets/components/slick/slick.min.js',
+		'/assets/components/util/util.min.js'
 	],
 	init: function ( nodes ) {
 		nodes.forEach( function ( node ) {
@@ -1018,14 +606,10 @@ components.slick = {
 
 components.swiper = {
 	selector: '.swiper-container',
-	styles: [
-		'./components/animate/animate.css',
-		'./components/swiper/swiper.css'
-	],
 	script: [
-		'./components/swiper/swiper.min.js',
-		'./components/swiper/swiper-progress-circle.min.js',
-		'./components/util/util.min.js'
+		'/assets/components/swiper/swiper.min.js',
+		'/assets/components/swiper/swiper-progress-circle.min.js',
+		'/assets/components/util/util.min.js'
 	],
 	init: function ( nodes ) {
 		nodes.forEach( function ( node ) {
@@ -1199,10 +783,9 @@ components.swiper = {
 
 components.regula = {
 	selector: '[data-constraints]',
-	styles: './components/regula/regula.css',
 	script: [
-		'./components/jquery/jquery.min.js',
-		'./components/regula/regula.min.js'
+		'/assets/components/jquery/jquery.min.js',
+		'/assets/components/regula/regula.min.js'
 	],
 	init: function ( nodes ) {
 		let elements = $( nodes );
@@ -1272,11 +855,10 @@ components.regula = {
 
 components.tooltip = {
 	selector: '[data-toggle="tooltip"]',
-	styles: './components/tooltip/tooltip.css',
 	script: [
-		'./components/jquery/jquery.min.js',
-		'./components/bootstrap/js/popper.min.js',
-		'./components/bootstrap/js/bootstrap.min.js'
+		'/assets/components/jquery/jquery.min.js',
+		'/assets/components/bootstrap/js/popper.min.js',
+		'/assets/components/bootstrap/js/bootstrap.min.js'
 	],
 	init: function( nodes ) {
 		nodes.forEach( function ( node ) {
@@ -1287,13 +869,11 @@ components.tooltip = {
 
 components.preloader = {
 	selector: '.preloader',
-	styles:   './components/preloader/preloader.css'
 };
 
 components.toTop = {
 	selector: 'html',
-	styles: './components/to-top/to-top.css',
-	script: './components/jquery/jquery.min.js',
+	script: '/assets/components/jquery/jquery.min.js',
 	init: function () {
 		if ( !window.xMode ) {
 			let node = document.createElement( 'div' );
@@ -1326,9 +906,7 @@ function parseJSON ( str ) {
 		if ( str )  return JSON.parse( str );
 		else return {};
 	} catch ( error ) {
-		//{DEL LIVEDEMO BUILDER}
 		console.warn( error );
-		//{DEL}
 		return {};
 	}
 }
@@ -1391,9 +969,7 @@ function strictMerge( source, merged ) {
 // Main
 window.addEventListener( 'load', function () {
 	new ZemezCore({
-		//{DEL LIVEDEMO BUILDER}
 		debug: true,
-		//{DEL}
 		components: components,
 		observeDOM: window.xMode,
 		IEHandler: function ( version ) {
