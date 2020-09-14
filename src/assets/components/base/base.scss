@@ -22,6 +22,8 @@
 @import "backgrounds";
 @import "text";
 @import "../accordion/accordion";
+@import "../misc/neu";
+@import "minicard";
 @import "../accordion/accordion";
 @import "../animate/animate";
 @import "../block/block";
@@ -480,14 +482,6 @@ ul.CTAs a {
     margin-bottom: 5px;
 }
 
-a.download {
-    background: #333333;
-}
-
-a.article,
-a.article:hover {
-    background: #333333;
-}
 
 
 /* ---------------------------------------------------

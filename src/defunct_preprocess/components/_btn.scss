@@ -83,7 +83,7 @@ button:focus,
     opacity: 0;
     @include transition;
     text-decoration: none !important;
-    background: linear-gradient(130.46deg, #2E1A47 12.58%, $chosenone 89.78%);
+    background: linear-gradient(130.46deg, #2E1A47 12.58%, #6c5ba7 89.78%);
 }
 
 .neubutton::after:hover,

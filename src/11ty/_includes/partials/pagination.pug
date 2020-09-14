@@ -1,10 +1,10 @@
 if pagination.previousPageHref or pagination.nextPageHref
     nav.pagination(role="pagination")
         if page.permalink != pagination.previousPageHref
-            a(href="{#pagination.previousPageHref}")Prev page
+            a(href="!{ pagination.previousPageHref }")Prev page
         else
             span Prev page
         if page.permalink != pagination.nextPageHref
-            a(href="{#pagination.nextPageHref}")Next page
+            a(href="!{ pagination.nextPageHref }")Next page
         else
             span Next page

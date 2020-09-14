@@ -2,9 +2,9 @@ const path = require("path");
 const paths = require("./paths");
 const pug = require("pug");
 const nunjucks = require("nunjucks");
-const projectVars = require("../src/11ty/_data/project");
+/*const projectVars = require("../src/11ty/_data/project");*/
 const pluginPWA = require("eleventy-plugin-pwa");
-require("dotenv").config('./.env');
+require("dotenv").config();
 const cleanCSS = require("clean-css");
 const fs = require("fs");
 const pluginRSS = require("@11ty/eleventy-plugin-rss");
@@ -13,19 +13,19 @@ const lazyImages = require("eleventy-plugin-lazyimages");
 const ghostContentAPI = require("@tryghost/content-api");
 const Handlebars = require("handlebars");
 const htmlMinTransform = require("./transforms/html-min-transform.js");
-const url = "";
+//const url = "";
 const sass = require('./sass-process');
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 //Watching for modificaions in style directory
 /*sass('src/preprocess/neu.scss', 'dist/assets/css/neu.css');*/
-sass('src/assets/components/base/base.scss', 'dist/assets/css/base.css');
+sass('./src/assets/components/base/base.scss', './dist/assets/css/base.css');
 const outputDir = 'dist';
-const assetDir = 'assets';
+//const assetDir = 'assets';
 // Init Ghost API
 const api = new ghostContentAPI({
     url: process.env.GHOST_API_URL,
     key: process.env.GHOST_CONTENT_API_KEY,
-    version: "v2"
+    version: "v3"
 });
 
 // Strip Ghost domain from urls
@@ -140,8 +140,8 @@ module.exports = function(config) {
 
         collection.forEach(post => {
             post.url = stripDomain(post.url);
-            if (post.feature_image != null){
-            post.feature_image = stripDomain(post.feature_image);}
+         //   if (post.feature_image != null){
+          //  post.feature_image = stripDomain(post.feature_image);}
             post.primary_author.url = stripDomain(post.primary_author.url);
             post.tags.map(tag => (tag.url = stripDomain(tag.url)));
 
@@ -225,20 +225,37 @@ module.exports = function(config) {
     });
 
     // minify the html output when running in prod
-    if (projectVars.production) {
+    
+/*if (projectVars.production) {
         config.addPlugin(pluginPWA);
         config.addTransform(
             "htmlmin",
             require("../build/scripts/minify-html")
         );
-    }
+    }*/
 
     // Copy `src/static/` to `dist/`
     config.addPassthroughCopy({ "src/static": "static" });
     config.addPassthroughCopy({ "src/assets/components": "assets/components" });
     config.addPassthroughCopy({ "src/media": "media" });
     config.addPassthroughCopy({ "src/assets": "assets" });
-
+    const {
+        DateTime
+      } = require("luxon");
+    
+      // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
+        config.addFilter('htmlDateString', (dateObj) => {
+          return DateTime.fromJSDate(dateObj, {
+            zone: 'utc'
+          }).toFormat('yy-MM-dd');
+        });
+    
+        config.addFilter("readableDate", dateObj => {
+        return DateTime.fromJSDate(dateObj, {
+          zone: 'utc'
+        }).toFormat("dd-MM-yy");
+      });
+    
 
     return {
         dir: {

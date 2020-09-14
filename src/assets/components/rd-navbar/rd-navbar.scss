@@ -197,9 +197,7 @@ $navbar-shadow: none;
     }
 }
 
-#sidebar ul li a:hover {
-    background: #333333;
-}
+
 
 #sidebar ul li a {
     color: #fff;
@@ -225,7 +223,6 @@ a[data-toggle="collapse"] {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #333333;
 }
 
 ul.CTAs {
@@ -239,18 +236,6 @@ ul.CTAs a {
     border-radius: 5px;
     margin-bottom: 5px;
 }
-
-a.download {
-    background: #6c5ba7;
-    background: #333333;
-}
-
-a.article,
-a.article:hover {
-    background: #6c5ba7 !important;
-    background: #333333;
-}
-
 
 /* ---------------------------------------------------
     CONTENT STYLE

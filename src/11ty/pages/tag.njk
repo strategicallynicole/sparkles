@@ -1,5 +1,5 @@
 ---
-layout: base
+layout:  default
 ---
 
 {% set title = tag.name %}
@@ -12,7 +12,7 @@ layout: base
     <section class="post-feed">
         {% if tag.posts %}
             {% for post in tag.posts %}
-            {% include "../partials/card.pug" %}
+                {{ card(post) }}
             {% endfor %}
         {% else %}
             <p>No posts to be found</p>

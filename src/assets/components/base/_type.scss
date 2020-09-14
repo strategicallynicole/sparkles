@@ -7,8 +7,14 @@ html {
         font-size: 16px;
     }
 }
+.content-body > p > ul > li {
+    padding-left: 5%;
+}
 li ul {
     padding-left: 10%;
+}
+ul.list-unstyled.components {
+    text-align: center;
 }
 .neubtn {
     color: #ffffff;

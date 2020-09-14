@@ -5,11 +5,14 @@ nav#sidebar
 		each item in site.navigation
 			li
 				a(class="effect-shine site-nav-button" href=item.url) #{item.label}
-		each doc in collections.docs
-			li
-				a(class="effect-shine site-nav-button" href=doc.url) #{doc.title}
+		//each doc in collections.docs
+		//	li
+		//		a(class="effect-shine site-nav-button" href=doc.url) #{doc.title}
 		a#toggler.dropdown-toggle(href="#pagesSubmenu" data-toggle="collapse" aria-expanded="true") Services
 			ul#pagesSubmenu.collapse.list-unstyled
-				each post in collections.posts										
-					li
-						a.effect-shine(href=post.url) #{post.title}
+				li Strategy
+				li Branding
+
+		each post in collections.posts.slice(0,1)									
+			li
+				include mini-card.pug

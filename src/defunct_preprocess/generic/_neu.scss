@@ -36,7 +36,7 @@
 }
 
 ::selection {
-    color: $chosenone;
+    color: #6c5ba7;
     background: #212121;
 }
 
@@ -125,7 +125,7 @@ p.whitetext {
 }
 
 .text-chosen {
-    color: $chosenone;
+    color: #6c5ba7;
     font-weight: $bold;
 }
 
@@ -197,7 +197,7 @@ p.whitetext {
     box-shadow: inset 3px 3px 10px #0D0E0F, inset -3px -3px 10px #40464E;
     opacity: 0;
     @include transition;
-    background: linear-gradient(130.46deg, #2E1A47 12.58%, $chosenone 89.78%);
+    background: linear-gradient(130.46deg, #2E1A47 12.58%, #6c5ba7 89.78%);
 }
 
 .neuicon.altalt::after {
@@ -211,7 +211,7 @@ p.whitetext {
     height: 100%;
     opacity: 0;
     @include transition;
-    box-shadow: 4px 3px 19px #0D0F0F, -5px -5px 20px #404E4A, inset 1px 1px 7px $chosenone;
+    box-shadow: 4px 3px 19px #0D0F0F, -5px -5px 20px #404E4A, inset 1px 1px 7px #6c5ba7;
 }
 
 .neuicon:hover::after {
@@ -255,7 +255,7 @@ p.whitetext {
     @include transition;
     box-sizing: border-box;
     box-shadow: inset 3px 3px 10px #0D0E0F, inset -3px -3px 10px #40464E;
-    background: linear-gradient(130.46deg, #2E1A47 12.58%, $chosenone 89.78%);
+    background: linear-gradient(130.46deg, #2E1A47 12.58%, #6c5ba7 89.78%);
 }
 
 textarea,

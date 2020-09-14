@@ -140,7 +140,7 @@ border-radius: 40px 40px 0px 0px;
     box-shadow: inset 3px 3px 10px #0D0E0F, inset -3px -3px 10px #40464E;
     opacity: 0;
     @include transition;
-    background: linear-gradient(130.46deg, #2E1A47 12.58%, $chosenone 89.78%);
+    background: linear-gradient(130.46deg, #2E1A47 12.58%, #6c5ba7 89.78%);
   }
 
   .neubtn.altalt::after {
@@ -154,7 +154,7 @@ border-radius: 40px 40px 0px 0px;
     height: 100%;
     opacity: 0;
     @include transition;
-    box-shadow: 4px 3px 19px #0D0F0F, -5px -5px 20px #404E4A, inset 1px 1px 7px $chosenone;
+    box-shadow: 4px 3px 19px #0D0F0F, -5px -5px 20px #404E4A, inset 1px 1px 7px #6c5ba7;
 
   }
   .neubtn:hover::after {

@@ -91,7 +91,7 @@ $bg-gradient: 333.76deg,
 #34393F 89.31%;
 $light-text-on-dark-bg: #efefef;
 $purple: #6c5ba7;
-$chosenone: $purple;
+#6c5ba7: $purple;
 $bold: 300;
 $darkchosenone: darken(#6c5ba7, 10%);
 .iconbox:hover,
@@ -292,7 +292,7 @@ $weight:400) {
     font-weight: 100;
 }
 ::selection {
-    color: $chosenone;
+    color: #6c5ba7;
     background: #212121;
 }
 body {
@@ -427,7 +427,7 @@ p.whitetext {
     opacity: 0;
     @include transition;
     text-decoration: none !important;
-    background: linear-gradient(130.46deg, #2E1A47 12.58%, $chosenone 89.78%);
+    background: linear-gradient(130.46deg, #2E1A47 12.58%, #6c5ba7 89.78%);
 }
 .neuicon i {
     position: absolute;
@@ -437,7 +437,7 @@ p.whitetext {
     color: rgba(255, 255, 255, 0.5) !important;
 }
 .text-chosen {
-    color: $chosenone;
+    color: #6c5ba7;
     font-weight: $bold;
 }
 .neuicon-holder-small {
@@ -502,7 +502,7 @@ p.whitetext {
     box-shadow: inset 3px 3px 10px #0D0E0F, inset -3px -3px 10px #40464E;
     opacity: 0;
     @include transition;
-    background: linear-gradient(130.46deg, #2E1A47 12.58%, $chosenone 89.78%);
+    background: linear-gradient(130.46deg, #2E1A47 12.58%, #6c5ba7 89.78%);
 }
 .neuicon.altalt::after {
     content: "";
@@ -515,7 +515,7 @@ p.whitetext {
     height: 100%;
     opacity: 0;
     @include transition;
-    box-shadow: 4px 3px 19px #0D0F0F, -5px -5px 20px #404E4A, inset 1px 1px 7px $chosenone;
+    box-shadow: 4px 3px 19px #0D0F0F, -5px -5px 20px #404E4A, inset 1px 1px 7px #6c5ba7;
 }
 .neuicon:hover::after {
     opacity: 1;
@@ -555,7 +555,7 @@ p.whitetext {
     @include transition;
     box-sizing: border-box;
     box-shadow: inset 3px 3px 10px #0D0E0F, inset -3px -3px 10px #40464E;
-    background: linear-gradient(130.46deg, #2E1A47 12.58%, $chosenone 89.78%);
+    background: linear-gradient(130.46deg, #2E1A47 12.58%, #6c5ba7 89.78%);
 }
 textarea,
 input {
