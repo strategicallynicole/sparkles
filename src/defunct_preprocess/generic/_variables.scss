@@ -1,33 +1,26 @@
 //Variables
-$font-size-base             : 18px;
-$font-weight-base           : 300;
-$line-height-base           : 1.2;
-
-$ff-sans-serif              : 'Raleway', "Helvetica Neue", Helvetica, Arial, sans-serif;
-$ff-serif                   : 'Oswald', "Times New Roman", Times, serif;
-
-$t-duration                 : 0.4s;
-
-$shell-max-width            : 1332px;
-$shell-gutter               : 15px;
-
-$c-black                    : #121212;
-$c-white                    : #fff;
-$c-base                     : #121212;
-
-$responsive-ios             : 812px;
-
-$breakpoints: (
-	mobile-small: 374px,
-	mobile-medium: 575px,
-	mobile: 767px,
-	admin-bar: 782px,
-	tablet: 1023px,
-	small-desktop: 1199px,
-	large-desktop: 1399px
-);
-
-$ff-raleway: 'Oswald', sans-serif;
+$font-size-base: 18px;
+$font-weight-base: 300;
+$line-height-base: 1.2;
+$ff-sans-serif: 'Raleway',
+"Helvetica Neue",
+Helvetica,
+Arial,
+sans-serif;
+$ff-serif: 'Oswald',
+"Times New Roman",
+Times,
+serif;
+$t-duration: 0.4s;
+$shell-max-width: 1332px;
+$shell-gutter: 15px;
+$c-black: #121212;
+$c-white: #fff;
+$c-base: #121212;
+$responsive-ios: 812px;
+$breakpoints: ( mobile-small: 374px, mobile-medium: 575px, mobile: 767px, admin-bar: 782px, tablet: 1023px, small-desktop: 1199px, large-desktop: 1399px);
+$ff-raleway: 'Oswald',
+sans-serif;
 $primary: #2B3033;
 $secondary: #c2c2c2;
 $white: #ffffff;
@@ -55,20 +48,18 @@ $category: #f1f1f1;
 $whisper: #e4e4e4;
 $quoteborder: #304354;
 // Fonts
-$libre: 'Raleway', sans-serif;
-$playfair: 'Raleway', serif;
-$oswald: 'Oswald', sans-serif;
+$libre: 'Raleway',
+sans-serif;
+$playfair: 'Raleway',
+serif;
+$oswald: 'Oswald',
+sans-serif;
 $sign: 'Raleway';
-$lora: 'Raleway', sans-serif;
-$roboto: 'Oswald', sans-serif;
-
-
-
-
-
+$lora: 'Raleway',
+sans-serif;
+$roboto: 'Oswald',
+sans-serif;
 $c-gray: #E0E0E0;
-
-
 $bg-gradient: linear-gradient(167.96deg, #262B2F 3.36%, #16191D 76.99%);
 $bg-grad: linear-gradient(167.96deg, #262B2F 3.36%, #16191D 76.99%);
 $light-text-on-dark-bg: #efefef;

@@ -1,35 +1,26 @@
 //Variables
-$font-size-base             : 18px;
-$font-weight-base           : 300;
-$line-height-base           : 1.2;
+$font-size-base: 18px;
+$font-weight-base: 300;
+$line-height-base: 1.2;
 @mixin neumorphic {
-	background: linear-gradient(137.63deg, #26272B 9.53%, #34393F 95.92%);
-	box-shadow: 3px 3px 10px #0D0E0F, inset -3px -3px 10px #40464E;
-	transition: 3s all ease-in-out;
-  }
-$ff-sans-serif              : 'Raleway', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: linear-gradient(137.63deg, #26272B 9.53%, #34393F 95.92%);
+    box-shadow: 3px 3px 10px #0D0E0F, inset -3px -3px 10px #40464E;
+    transition: 3s all ease-in-out;
+}
 
-$t-duration                 : 0.4s;
-
-$shell-max-width            : 1332px;
-$shell-gutter               : 15px;
-
-$c-black                    : #000;
-$c-white                    : #fff;
-$c-base                     : #2B3033;
-
-$responsive-ios             : 812px;
-
-$breakpoints: (
-	mobile-small: 374px,
-	mobile-medium: 575px,
-	mobile: 767px,
-	admin-bar: 782px,
-	tablet: 1023px,
-	small-desktop: 1199px,
-	large-desktop: 1399px
-);
-
-$ff-raleway: 'Oswald', sans-serif;
-
+$ff-sans-serif: 'Raleway',
+"Helvetica Neue",
+Helvetica,
+Arial,
+sans-serif;
+$t-duration: 0.4s;
+$shell-max-width: 1332px;
+$shell-gutter: 15px;
+$c-black: #000;
+$c-white: #fff;
+$c-base: #2B3033;
+$responsive-ios: 812px;
+$breakpoints: ( mobile-small: 374px, mobile-medium: 575px, mobile: 767px, admin-bar: 782px, tablet: 1023px, small-desktop: 1199px, large-desktop: 1399px);
+$ff-raleway: 'Oswald',
+sans-serif;
 $c-gray: #E0E0E0;

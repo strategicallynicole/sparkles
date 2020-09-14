@@ -1,76 +1,70 @@
 @mixin border-box {
     //  border: 1px solid #ffffff;
-   //   box-sizing: border-box;
-   //   -moz-box-sizing: border-box;
-  //    -webkit-box-sizing: border-box;
-  }
-  @mixin border-box-alt {
-      border: 1px solid $purple;
-      box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      -webkit-box-sizing: border-box;
-  }
-  .strokeyhover:hover {
+    //   box-sizing: border-box;
+    //   -moz-box-sizing: border-box;
+    //    -webkit-box-sizing: border-box;
+}
 
+@mixin border-box-alt {
+    border: 1px solid $purple;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.strokeyhover:hover {
     border: 1px solid #6c5ba7 !important;
 }
+
 .strokeyhover:focus {
-
     border: none !important;
 }
+
 .strokeyhover:active {
-
     border: none !important;
 }
-  @mixin bg-grad {
+
+@mixin bg-grad {
     background: radial-gradient(54.85% 46.25% at 50% 50%, #373A42 0%, #000000 100%);
     @include bg-size-cover;
     background-repeat: no-repeat !important;
     background-attachment: fixed !important;
     color: $light-text-on-dark-bg;
+}
 
-    }
-  
-  
-    @mixin hovers {
-      &:hover   {
+@mixin hovers {
+    &:hover {
         -webkit-transform: scale(1, 1);
         transform: scale(1, 1);
-       }
-      &:hover::after {
+    }
+    &:hover::after {
         opacity: 1;
-      }
     }
-  
-  
-  
-  
-  @mixin transition {
-      -moz-transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
-      -webkit-transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
-      transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
-    }
-  
-  
-  
-  
-    @mixin bg-size-cover {
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-    }
-  
-    @mixin neu-dark-bg {
-      @include bg-grad;
-      @include bg-size-cover;
-      background-repeat: no-repeat !important;
-      background-attachment: fixed !important;
-      color: $light-text-on-dark-bg;
-      font-family: 'Raleway';
-      font-weight: 100;
-    }
-  
+}
+
+@mixin transition {
+    -moz-transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    -webkit-transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+@mixin bg-size-cover {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+@mixin neu-dark-bg {
+    @include bg-grad;
+    @include bg-size-cover;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    color: $light-text-on-dark-bg;
+    font-family: 'Raleway';
+    font-weight: 100;
+}
+
 // -----------------------------------------------------------------------------
 // This file contains all application-wide Sass mixins.
 // -----------------------------------------------------------------------------
@@ -95,7 +89,6 @@
         }
     }
 }
-
 
 /// Breakpoints map
 /// @prop {String} keys - Keys are identifiers mapped to a given length
@@ -123,40 +116,38 @@ $breakpoints: ( 'small': 320px, 'medium': 768px, 'large': 1024px, );
     -o-transition: all $time ease;
     transition: all $time ease;
 }
-
 @mixin scale($scale) {
     -webkit-transform: ($scale);
     -moz-transform: ($scale);
     -ms-transform: ($scale);
     -o-transform: ($scale);
     transform: ($scale);
-} 
-
-@mixin transform($xtime, $ytime) {
-    transform: translate(#{$xtime}, #{$ytime});
-    -moz-transform: translate(#{$xtime}, #{$ytime});
-    -webkit-transform: translate(#{$xtime}, #{$ytime});
-    -o-transform: translate(#{$xtime}, #{$ytime});
 }
-
+@mixin transform($xtime,
+$ytime) {
+    transform: translate(#{$xtime},
+    #{$ytime});
+    -moz-transform: translate(#{$xtime},
+    #{$ytime});
+    -webkit-transform: translate(#{$xtime},
+    #{$ytime});
+    -o-transform: translate(#{$xtime},
+    #{$ytime});
+}
 @mixin transformX($time) {
     transform: translateX(#{$time});
     -moz-transform: translateX(#{$time});
     -webkit-transform: translateX(#{$time});
     -o-transform: translateX(#{$time});
 }
-
-
 @mixin transformY($time) {
     transform: translateY(#{$time});
     -moz-transform: translateY(#{$time});
     -webkit-transform: translateY(#{$time});
     -o-transform: translateY(#{$time});
 }
-
-
-@mixin  font($name, $weight:400) {
+@mixin font($name,
+$weight:400) {
     font-family: #{$name};
     font-weight: #{$weight};
 }
-
