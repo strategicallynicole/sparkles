@@ -1,0 +1,13 @@
+
+{% set js %}
+  {% include "/assets/components/sidebar/js/jquery-3.1.1.min.js" %}
+  {% include "/assets/components/sidebar/js/bootstrap.min.js" %}
+  {% include "/assets/js/script.js" %}
+  {% include "/assets/vendor/jquery-ui.min.js" %}
+    {% include "/assets/components/base/core.min.js" %)
+        {% include "/assets/components/base/script.js" %)
+
+{% endset %}
+<script>
+  {{ js | jsmin | safe }}
+</script>

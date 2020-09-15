@@ -1,6 +1,5 @@
-node_modules/
-dist/
-preprocess/
+./node_modules/
+./dist/
 ./src/preprocess/
 ./src/assets/scss/
 ./src/media/
@@ -9,3 +8,5 @@ preprocess/
 ./src/assets/components/
 ./src/defunct_preprocess/
 ./src/components/
+./src/assets/vendor/
+./src/assets/js/

@@ -20,6 +20,7 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 /*sass('src/preprocess/neu.scss', 'dist/assets/css/neu.css');*/
 sass('./src/assets/components/base/base.scss', './dist/assets/css/base.css');
 sass('./src/assets/neu/style.scss', './dist/assets/css/style.css');
+const { minify } = require("terser");
 
 const outputDir = 'dist';
 //const assetDir = 'assets';
@@ -37,6 +38,19 @@ const stripDomain = url => {
 
 
 module.exports = function(config) {
+    config.addNunjucksAsyncFilter("jsmin", async function (
+        code,
+        callback
+      ) {
+        try {
+          const minified = await minify(code);
+          callback(null, minified.code);
+        } catch (err) {
+          console.error("Terser error: ", err);
+          // Fail gracefully.
+          callback(null, code);
+        }
+      });
     config.setLibrary("pug", pug);
 
 
@@ -240,6 +254,8 @@ module.exports = function(config) {
     config.addPassthroughCopy({ "src/static": "static" });
     config.addPassthroughCopy({ "src/assets/components": "assets/components" });
     config.addPassthroughCopy({ "src/media": "media" });
+    config.addPassthroughCopy({ "src/assets/css": "assets/css" });
+
     config.addPassthroughCopy({ "src/assets": "assets" });
     config.addPassthroughCopy({ "src/assets/vendor": "assets/vendor" });
     config.addPassthroughCopy({ "src/assets/js": "assets/js" });
@@ -279,3 +295,72 @@ module.exports = function(config) {
         passthroughFileCopy: true
     };
 };
+const imagemin = require('gulp-imagemin');
+const imageminMozjpeg = require('imagemin-mozjpeg');
+const imageminPNGquant = require('imagemin-pngquant');
+
+// Enable ES6 PolyFill
+// Change option to 'usage' in order to enable PolyFill;
+// https://babeljs.io/docs/en/babel-preset-env#usebuiltins
+module.exports.polyFill = false;
+
+// Setting for cleaning SVGs from path, stroke and style
+module.exports.cleanSVGs = false;
+
+// Enable the processing of JS files with webpack.
+module.exports.enableWebpack = false;
+
+// Setting for padding between the images in the sprite
+// https://github.com/2createStudio/postcss-sprites
+// https://github.com/Ensighten/spritesmith#padding
+module.exports.spritePadding = 4;
+
+// Settings for images optimization
+// https://github.com/sindresorhus/gulp-imagemin
+module.exports.imageminSettings = [
+	// GIFs
+	// https://github.com/imagemin/imagemin-gifsicle#api
+	imagemin.gifsicle({
+		interlaced: true
+	}),
+
+	// JP(E)G
+	// https://github.com/imagemin/imagemin-jpegtran#api
+	imageminMozjpeg({
+		quality: 70
+	}),
+
+	// PNG
+	// https://github.com/imagemin/imagemin-optipng#api
+	imageminPNGquant({
+		speed: 1,
+		quality: 90
+	}),
+
+	// SVG
+	// https://github.com/imagemin/imagemin-svgo#api
+	// https://github.com/svg/svgo#what-it-can-do
+	imagemin.svgo({
+		plugins: [
+			{ cleanupAttrs: true },
+			{ removeDoctype: true },
+			{ removeXMLProcInst: true },
+			{ removeComments: true },
+			{ removeMetadata: true },
+			{ removeUselessDefs: true },
+			{ removeEditorsNSData: true },
+			{ removeEmptyAttrs: true },
+			{ removeHiddenElems: false },
+			{ removeEmptyText: true },
+			{ removeEmptyContainers: true },
+			{ cleanupEnableBackground: true },
+			{ removeViewBox: true },
+			{ cleanupIDs: false },
+			{ convertStyleToAttrs: true }
+		]
+	})
+];
+
+// Autoprefixer setting for browsers to support
+// https://github.com/postcss/autoprefixer#browsers
+module.exports.supportedBrowsers = ['last 3 versions'];

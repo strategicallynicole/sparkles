@@ -20,7 +20,6 @@
 	Components
 \* ------------------------------------------------------------ */
 
-@import '_sprite.css';
 
 
 /* ------------------------------------------------------------ *\
@@ -29,13 +28,11 @@
 
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald');
-@import 'style.scss';
 
 /* ------------------------------------------------------------ *\
 	Generic
 \* ------------------------------------------------------------ */
 
-@import "bootstrap/bootstrap.scss";
 @import 'generic/variables';
 @import 'generic/reset';
 @import 'generic/fonts';
@@ -51,45 +48,45 @@
 	Components
 \* ------------------------------------------------------------ */
 
-@import "accordion";
-@import "animation";
-@import "bar";
-@import "block";
-@import "box-different";
-@import "box";
-@import "btn-dark";
-@import "btn-round";
-@import "btn-small";
-@import "btn";
-@import "checkbox-alt";
-@import "checkbox-different";
-@import "checkbox";
-@import "components";
-@import "dropdown";
-@import "field";
-@import "footer";
-@import "grid";
-@import "header";
-@import "icons";
-@import "item";
-@import "logo";
-@import "main";
-@import "nav";
-@import "panel";
+@import "components/accordion";
+@import "components/animation";
+@import "components/bar";
+@import "components/block";
+@import "components/box-different";
+@import "components/box";
+@import "components/btn-dark";
+@import "components/btn-round";
+@import "components/btn-small";
+@import "components/btn";
+@import "components/checkbox-alt";
+@import "components/checkbox-different";
+@import "components/checkbox";
+@import "components/components";
+@import "components/dropdown";
+@import "components/field";
+@import "components/footer";
+@import "components/grid";
+@import "components/header";
+@import "components/icons";
+@import "components/item";
+@import "components/logo";
+@import "components/main";
+@import "components/nav";
+@import "components/panel";
 
-@import "pp-section";
-@import "radio-alt";
-@import "radio-group";
-@import "radio";
-@import "range-slider-alt";
-@import "range-slider";
-@import "section-about";
-@import "section";
-@import "select";
-@import "shell";
-@import "slider";
-@import "switch";
-@import "tab";
-@import "tabs";
-@import "tag";
-@import "wrapper";
+@import "components/pp-section";
+@import "components/radio-alt";
+@import "components/radio-group";
+@import "components/radio";
+@import "components/range-slider-alt";
+@import "components/range-slider";
+@import "components/section-about";
+@import "components/section";
+@import "components/select";
+@import "components/shell";
+@import "components/slider";
+@import "components/switch";
+@import "components/tab";
+@import "components/tabs";
+@import "components/tag";
+@import "components/wrapper";

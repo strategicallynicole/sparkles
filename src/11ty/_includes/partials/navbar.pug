@@ -9,27 +9,25 @@ nav#sidebar
 		//	li
 		//		a(class="effect-shine site-nav-button" href=doc.url) #{doc.title}
 		a#toggler.dropdown-toggle(href="#pagesSubmenu" data-toggle="collapse" aria-expanded="true") Services
-			ul#pagesSubmenu.collapse.list-unstyled
 				.components
-  					.shell
-    					.components__row
-      						.dropdown
+					.shell
+						.components__row
+							.dropdown
 							a(href='#') Color
 							ul
-							li
-								a(href='#') Red
-							li
-								a(href='#') Blue
-							li
-								a(href='#') Green			
-										li Strategy
-										li Branding
-			.dropdown click me
-				ul
-					li
-						a Red
-					li
-						a Blue
+								li
+									a(href='#') Red
+								li
+									a(href='#') Blue
+								li
+									a(href='#') Green			
+								li Strategy
+								li Branding
+		ul#pagesSubmenu.collapse.list-unstyled
+			li
+				a Red
+			li
+				a Blue
 		each post in collections.posts.slice(0,1)									
 			li
 				include mini-card.pug

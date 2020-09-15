@@ -1,4 +1,112 @@
 'use strict';
+/*
+ * Polyfills
+ */
+
+/*
+ * Modules
+ */
+
+const $win = $(window);
+
+
+function initAnimationSpread (arguments) {
+	const $animation = $('.js-animation-spread');
+
+	$animation.each(function() {
+		const $items = $animation.find('.js-animation-item');
+		const $timingStart = .6;
+		const $timingStep = .1;
+		const $timingGroup = 4;
+
+		for (let i = 0; i < $items.length; i++) {
+			$($items[i]).css({
+				transitionDelay:  $timingStart + Math.floor(i / $timingGroup) * $timingStep + 's',
+			});
+		}
+	});
+}
+
+initAnimationSpread();
+
+const splitTextToNewLines = () => {
+	const $element = $('.js-split-new-line');
+
+	$element.each(function(index, el) {
+		if (! $(el).length) {
+			return;
+		}
+
+		const elementText = $(el).html().trim();
+		const textArray = elementText.split(' ');
+
+		$(el).empty();
+
+		textArray.map(item => $(el).append(`<span class="animation__item js-animation-item">${item}&nbsp;</>`));
+	});
+
+}
+
+splitTextToNewLines();
+
+// Animation For Mobile
+
+if ($win.width() < 1024) {
+	$animationContainer.each(function(index, el) {
+		const $this = $(this);
+		const $animations = $(el).find('.js-init-animation');
+		let space = 400;
+
+		$win.on('scroll', function() {
+			const scroll = $win.scrollTop() + $win.height();
+			const offset = $this.offset().top;
+
+			if (offset < scroll - space) {
+				$animations.addClass('animate');
+			} else {
+				$animations.removeClass('animate');
+			}
+		});
+	});
+}
+
+// Scroll To Section And Change Hash For Mobile
+
+if ($win.width() < 1024) {
+	const hashCheck = () => {
+		$('.js-scroll-to').on('click', function(event) {
+			event.preventDefault()
+
+			let hash = this.hash;
+			let scrollTo = $(this).attr('href');
+
+			$('html, body').animate({
+				scrollTop: $(scrollTo).offset().top,
+			}, 500, function () {
+				window.location.hash = hash;
+			})
+		});
+	}
+
+	hashCheck();
+
+	$win.on('hashchange', hashCheck);
+}
+
+
+// Tabs
+
+$('.tabs__nav a').on('click', function(event) {
+	event.preventDefault();
+	const $this = $(this);
+	const target = $this.attr('href');
+
+	$this.parent()
+		.add($(target))
+		.addClass('is-active')
+		.siblings()
+		.removeClass('is-active');
+});
 
 // Global components list
 let components = window.components = {};
@@ -15,40 +123,33 @@ components.mdi = {
 
 components.grid = {
 	selector: '.container, .container-fluid, .row, [class*="col-"]',
-	styles: './components/grid/grid.css'
 };
 
 components.block = {
 	selector: '.block',
-	styles: './components/block/block.css'
 };
 
 components.blurb = {
 	selector: '.blurb',
 	styles: [
 		'./components/media/media.css',
-		'./components/blurb/blurb.css'
 	]
 };
 
 components.box = {
 	selector: '.box',
-	styles: './components/box/box.css'
 };
 
 components.button = {
 	selector: '.btn, .btn-group',
-	styles: './components/button/button.css'
 };
 
 components.divider = {
-	selector: '.divider',
-	styles: './components/divider/divider.css'
+	selector: '.divider'
 };
 
 components.form = {
 	selector: '.form-group, .input-group, .form-check, .custom-control, .form-control',
-	styles: './components/form/form.css'
 };
 
 components.formOutput = {
