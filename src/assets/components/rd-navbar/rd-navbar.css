@@ -211,7 +211,6 @@ a[data-toggle="collapse"] {
 
 ul ul a {
     font-size: 0.9em !important;
-    padding-left: 30px !important;
     background: #333333;
 }
 
@@ -390,11 +389,7 @@ a[data-toggle="collapse"] {
     transform: translateY(-50%);
 }
 
-ul ul a {
-    font-size: 0.9em !important;
-    padding-left: 30px !important;
-    background: #333333;
-}
+
 
 ul.CTAs {
     padding: 20px;
@@ -574,12 +569,6 @@ a[data-toggle="collapse"] {
     top: 50%;
     right: 20px;
     transform: translateY(-50%);
-}
-
-ul ul a {
-    font-size: 0.9em !important;
-    padding-left: 30px !important;
-    background: #333333;
 }
 
 ul.CTAs {
@@ -784,11 +773,6 @@ a[data-toggle="collapse"] {
     transform: translateY(-50%);
 }
 
-ul ul a {
-    font-size: 0.9em !important;
-    padding-left: 30px !important;
-    background: #333333;
-}
 
 ul.CTAs {
     padding: 20px;

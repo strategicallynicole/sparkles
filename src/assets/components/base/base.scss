@@ -231,7 +231,6 @@ $navbar-shadow: none;
 /* Same dropdown links padding*/
 
 #sidebar.active ul ul a {
-    padding: 10px !important;
 }
 
 
@@ -291,7 +290,6 @@ $navbar-shadow: none;
     }
     /* Adjust the dropdown links padding*/
     #sidebar.active ul ul a {
-        padding: 10px !important;
     }
     /* Changing the arrow position to bottom center position, 
       translateX(50%) works with right: 50% 
@@ -337,8 +335,7 @@ a[data-toggle="collapse"] {
 }
 
 #sidebar ul.components {
-    padding: 20px 0;
-    border-bottom: 1px solid #47748b;
+
 }
 
 #sidebar ul p {
@@ -357,10 +354,6 @@ a[aria-expanded="true"] {
     color: #fff;
 }
 
-ul ul a {
-    font-size: 0.9em !important;
-    padding-left: 30px !important;
-}
 
 
 /* ---------------------------------------------------
@@ -579,14 +572,6 @@ a[data-toggle="collapse"] {
     transform: translateY(-50%);
 }
 
-ul ul a {
-    font-size: 0.9em !important;
-    padding-left: 30px !important;
-}
-
-ul.CTAs {
-    padding: 20px;
-}
 
 ul.CTAs a {
     text-align: center;

@@ -1,0 +1,11 @@
+
+.container
+    .row
+        each post in collections.posts.slice(0,2)
+            .col-sm
+                include card.pug
+    .row
+        each post in collections.posts.slice(3,5)
+            .col-sm
+                include card.pug
+

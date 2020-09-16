@@ -1,6 +1,7 @@
 nav#sidebar
 	.sidebar-header
 		img.effect-shine(src="/media/img/logo-symbol-purple-white.svg" width="125" style="max-width:100%;width:150px")
+		img.effect-shine(src="/media/img/hr.svg" style="width:100%; padding-bottom: 0px; margin-top: 0px; margin-bottom: -10px;")
 	ul.list-unstyled.components
 		each item in site.navigation
 			li
@@ -8,26 +9,21 @@ nav#sidebar
 		//each doc in collections.docs
 		//	li
 		//		a(class="effect-shine site-nav-button" href=doc.url) #{doc.title}
-		a#toggler.dropdown-toggle(href="#pagesSubmenu" data-toggle="collapse" aria-expanded="true") Services
-				.components
-					.shell
-						.components__row
-							.dropdown
-							a(href='#') Color
-							ul
-								li
-									a(href='#') Red
-								li
-									a(href='#') Blue
-								li
-									a(href='#') Green			
-								li Strategy
-								li Branding
-		ul#pagesSubmenu.collapse.list-unstyled
-			li
-				a Red
-			li
-				a Blue
+		.components
+			.shell
+				.components__row.text-left.left-text(style="text-align: left")
+					.dropdown.super-small-btn
+						a.tiny-text.text-left.left-text.effect-shine(href='#') Services
+						ul.tiny-text
+							img(src="/media/img/hr.svg" width="100%" style="width:100%; padding-bottom: 20px;")
+							li.tiny-text.text-left.left-text.targetme
+								a.tiny-text.text-left.left-text.targetme.effect-shine(href='#') Branding
+							li.tiny-text.text-left.left-text.targetme
+								a.tiny-text.text-left.left-text.targetme.effect-shine(href='#') Strategy
+							li.tiny-text.text-left.left-text.targetme
+								a.tiny-text.text-left.left-text.targetme.effect-shine(href='#') Consulting			
+							li.tiny-text.text-left.left-text.targetme
+								a.tiny-text.text-left.left-text.targetme.effect-shine(href='#') Creative
 		each post in collections.posts.slice(0,1)									
 			li
 				include mini-card.pug

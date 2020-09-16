@@ -220,10 +220,7 @@ a[data-toggle="collapse"] {
     transform: translateY(-50%);
 }
 
-ul ul a {
-    font-size: 0.9em !important;
-    padding-left: 30px !important;
-}
+
 
 ul.CTAs {
     padding: 20px;
@@ -332,7 +329,6 @@ ul.CTAs a {
 /* Same dropdown links padding*/
 
 #sidebar.active ul ul a {
-    padding: 10px !important;
 }
 
 
@@ -420,7 +416,9 @@ ul.CTAs a {
     }
     /* Adjust the dropdown links padding*/
     #sidebar.active ul ul a {
-        padding: 10px !important;
+    }
+    .dropdown.super-small-btn {
+        margin-left: 9px;
     }
     /* Changing the arrow position to bottom center position, 
       translateX(50%) works with right: 50% 

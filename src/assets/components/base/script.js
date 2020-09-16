@@ -1,112 +1,4 @@
 'use strict';
-/*
- * Polyfills
- */
-
-/*
- * Modules
- */
-
-const $win = $(window);
-
-
-function initAnimationSpread (arguments) {
-	const $animation = $('.js-animation-spread');
-
-	$animation.each(function() {
-		const $items = $animation.find('.js-animation-item');
-		const $timingStart = .6;
-		const $timingStep = .1;
-		const $timingGroup = 4;
-
-		for (let i = 0; i < $items.length; i++) {
-			$($items[i]).css({
-				transitionDelay:  $timingStart + Math.floor(i / $timingGroup) * $timingStep + 's',
-			});
-		}
-	});
-}
-
-initAnimationSpread();
-
-const splitTextToNewLines = () => {
-	const $element = $('.js-split-new-line');
-
-	$element.each(function(index, el) {
-		if (! $(el).length) {
-			return;
-		}
-
-		const elementText = $(el).html().trim();
-		const textArray = elementText.split(' ');
-
-		$(el).empty();
-
-		textArray.map(item => $(el).append(`<span class="animation__item js-animation-item">${item}&nbsp;</>`));
-	});
-
-}
-
-splitTextToNewLines();
-
-// Animation For Mobile
-
-if ($win.width() < 1024) {
-	$animationContainer.each(function(index, el) {
-		const $this = $(this);
-		const $animations = $(el).find('.js-init-animation');
-		let space = 400;
-
-		$win.on('scroll', function() {
-			const scroll = $win.scrollTop() + $win.height();
-			const offset = $this.offset().top;
-
-			if (offset < scroll - space) {
-				$animations.addClass('animate');
-			} else {
-				$animations.removeClass('animate');
-			}
-		});
-	});
-}
-
-// Scroll To Section And Change Hash For Mobile
-
-if ($win.width() < 1024) {
-	const hashCheck = () => {
-		$('.js-scroll-to').on('click', function(event) {
-			event.preventDefault()
-
-			let hash = this.hash;
-			let scrollTo = $(this).attr('href');
-
-			$('html, body').animate({
-				scrollTop: $(scrollTo).offset().top,
-			}, 500, function () {
-				window.location.hash = hash;
-			})
-		});
-	}
-
-	hashCheck();
-
-	$win.on('hashchange', hashCheck);
-}
-
-
-// Tabs
-
-$('.tabs__nav a').on('click', function(event) {
-	event.preventDefault();
-	const $this = $(this);
-	const target = $this.attr('href');
-
-	$this.parent()
-		.add($(target))
-		.addClass('is-active')
-		.siblings()
-		.removeClass('is-active');
-});
 
 // Global components list
 let components = window.components = {};
@@ -118,125 +10,132 @@ components.fonts = {
 
 components.mdi = {
 	selector: '[class*="mdi"]',
-	styles: './components/mdi/mdi.css'
+	styles: './assets/components/mdi/mdi.css'
 };
 
 components.grid = {
 	selector: '.container, .container-fluid, .row, [class*="col-"]',
+	styles: './assets/components/grid/grid.css'
 };
 
 components.block = {
 	selector: '.block',
+	styles: './assets/components/block/block.css'
 };
 
 components.blurb = {
 	selector: '.blurb',
 	styles: [
-		'./components/media/media.css',
+		'./assets/components/media/media.css',
+		'./assets/components/blurb/blurb.css'
 	]
 };
 
 components.box = {
 	selector: '.box',
+	styles: './assets/components/box/box.css'
 };
 
 components.button = {
 	selector: '.btn, .btn-group',
+	styles: './assets/components/button/button.css'
 };
 
 components.divider = {
-	selector: '.divider'
+	selector: '.divider',
+	styles: './assets/components/divider/divider.css'
 };
 
 components.form = {
 	selector: '.form-group, .input-group, .form-check, .custom-control, .form-control',
+	styles: './assets/components/form/form.css'
 };
 
 components.formOutput = {
 	selector: '.form-output',
-	styles:   './components/form-output/form-output.css'
+	styles:   './assets/components/form-output/form-output.css'
 };
 
 components.icon = {
 	selector: '.icon',
-	styles: './components/icon/icon.css'
+	styles: './assets/components/icon/icon.css'
 };
 
 components.imageSvg = {
 	selector: '.image-svg',
-	styles: './components/image-svg/image-svg.css'
+	styles: './assets/components/image-svg/image-svg.css'
 };
 
 components.list = {
 	selector: '.list',
-	styles: './components/list/list.css'
+	styles: './assets/components/list/list.css'
 };
 
 components.media = {
 	selector: '.media',
-	styles: './components/media/media.css'
+	styles: './assets/components/media/media.css'
 };
 
 components.partner = {
 	selector: '.partner',
-	styles: './components/partner/partner.css'
+	styles: './assets/components/partner/partner.css'
 };
 
 components.post = {
 	selector: '.post, .post-modern',
-	styles: './components/post/post.css'
+	styles: './assets/components/post/post.css'
 };
 
 components.pricing = {
 	selector: '.pricing, .pricing-modern',
-	styles: './components/pricing/pricing.css'
+	styles: './assets/components/pricing/pricing.css'
 };
 
 components.quote = {
 	selector: '.quote',
 	styles: [
-		'./components/media/media.css',
-		'./components/quote/quote.css'
+		'./assets/components/media/media.css',
+		'./assets/components/quote/quote.css'
 	]
 };
 
 components.rights = {
 	selector: '.rights',
-	styles: './components/rights/rights.css'
+	styles: './assets/components/rights/rights.css'
 };
 
 components.section = {
 	selector: 'section',
-	styles: './components/section/section.css'
+	styles: './assets/components/section/section.css'
 };
 
 components.snackbar = {
 	selector: '.snackbar',
-	styles: './components/snackbar/snackbar.css'
+	styles: './assets/components/snackbar/snackbar.css'
 };
 
 components.table = {
 	selector: '.table',
-	styles: './components/table/table.css'
+	styles: './assets/components/table/table.css'
 };
 
 components.team = {
 	selector: '.team, .team-mini',
-	styles: './components/team/team.css'
+	styles: './assets/components/team/team.css'
 };
 
 components.video = {
 	selector: '.video',
-	styles: './components/video/video.css'
+	styles: './assets/components/video/video.css'
 };
 
 components.accordion = {
 	selector: '.accordion',
-	styles: './components/accordion/accordion.css',
+	styles: './assets/components/accordion/accordion.css',
 	script: [
-		'./components/jquery/jquery.min.js',
-		'./components/current-device/current-device.min.js',
-		'./components/multiswitch/multiswitch.min.js'
+		'./assets/components/jquery/jquery.min.js',
+		'./assets/components/current-device/current-device.min.js',
+		'./assets/components/multiswitch/multiswitch.min.js'
 	],
 	init: function ( nodes ) {
 		nodes.forEach( function ( node ) {
@@ -275,8 +174,8 @@ components.accordion = {
 
 components.animate = {
 	selector: '[data-animate]',
-	styles: './components/animate/animate.css',
-	script: './components/current-device/current-device.min.js',
+	styles: './assets/components/animate/animate.css',
+	script: './assets/components/current-device/current-device.min.js',
 	init: function ( nodes ) {
 		let observer = new IntersectionObserver( function ( entries, observer ) {
 			entries.forEach( function ( entry ) {
@@ -306,10 +205,10 @@ components.animate = {
 
 components.countdown = {
 	selector: '[data-countdown]',
-	styles: './components/countdown/countdown.css',
+	styles: './assets/components/countdown/countdown.css',
 	script: [
-		'./components/progress-circle/progress-circle.min.js',
-		'./components/countdown/countdown.min.js'
+		'./assets/components/progress-circle/progress-circle.min.js',
+		'./assets/components/countdown/countdown.min.js'
 	],
 	init: function ( nodes ) {
 		nodes.forEach( function ( node ) {
@@ -326,8 +225,8 @@ components.countdown = {
 
 components.counter = {
 	selector: '[data-counter]',
-	styles: './components/counter/counter.css',
-	script: './components/counter/counter.min.js',
+	styles: './assets/components/counter/counter.css',
+	script: './assets/components/counter/counter.min.js',
 	init: function ( nodes ) {
 		let observer = new IntersectionObserver( function ( entries, observer ) {
 			entries.forEach( function ( entry ) {
@@ -362,9 +261,9 @@ components.counter = {
 // components.blotter = {
 // 	selector: '#blotter',
 // 	script: [
-// 		'./components/jquery/jquery.min.js',
-// 		'./components/blotter/blotter.min.js',
-// 		'./components/blotter/liquidDistortMaterial.js'
+// 		'./assets/components/jquery/jquery.min.js',
+// 		'./assets/components/blotter/blotter.min.js',
+// 		'./assets/components/blotter/liquidDistortMaterial.js'
 // 	],
 // 	init: function () {
 // 		let text = new Blotter.Text( 'observation', {
@@ -400,16 +299,16 @@ components.counter = {
 // TODO move to blurb component
 components.currentDevice = {
 	selector: 'html',
-	script: './components/current-device/current-device.min.js'
+	script: './assets/components/current-device/current-device.min.js'
 };
 
 components.fullpage = {
 	selector: '.fullpage',
-	styles: './components/fullpage/fullpage.css',
+	styles: './assets/components/fullpage/fullpage.css',
 	script: [
-		'./components/jquery/jquery.min.js',
-		'./components/fullpage/fullpage.min.js',
-		'./components/util/util.min.js'
+		'./assets/components/jquery/jquery.min.js',
+		'./assets/components/fullpage/fullpage.min.js',
+		'./assets/components/util/util.min.js'
 	],
 	init: function ( nodes ) {
 		nodes.forEach( function ( node ) {
@@ -491,11 +390,11 @@ components.fullpage = {
 
 components.imageHover = {
 	selector: '.image-hover',
-	styles: './components/image-hover/image-hover.css',
+	styles: './assets/components/image-hover/image-hover.css',
 	script: [
 		'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js',
-		'./components/image-hover/three.min.js',
-		'./components/image-hover/hover.js'
+		'./assets/components/image-hover/three.min.js',
+		'./assets/components/image-hover/hover.js'
 	],
 	init: function ( nodes ) {
 		nodes.forEach( function ( node ) {
@@ -518,10 +417,10 @@ components.imageHover = {
 
 components.lightgallery = {
 	selector: '[data-lightgallery]',
-	styles: './components/lightgallery/lightgallery.css',
+	styles: './assets/components/lightgallery/lightgallery.css',
 	script: [
-		'./components/jquery/jquery.min.js',
-		'./components/lightgallery/lightgallery.min.js'
+		'./assets/components/jquery/jquery.min.js',
+		'./assets/components/lightgallery/lightgallery.min.js'
 	],
 	init: function ( nodes ) {
 		if ( !window.xMode ) {
@@ -566,11 +465,11 @@ components.modalBtn = {
 
 components.modal = {
 	selector: '.modal',
-	styles: './components/modal/modal.css',
+	styles: './assets/components/modal/modal.css',
 	script: [
-		'./components/jquery/jquery.min.js',
-		'./components/bootstrap/js/popper.min.js',
-		'./components/bootstrap/js/bootstrap.min.js'
+		'./assets/components/jquery/jquery.min.js',
+		'./assets/components/bootstrap/js/popper.min.js',
+		'./assets/components/bootstrap/js/bootstrap.min.js'
 	],
 	init: function ( nodes ) {
 		nodes.forEach( function ( node ) {
@@ -584,10 +483,10 @@ components.modal = {
 
 components.multiswitch = {
 	selector: '[data-multi-switch]',
-	styles: './components/multiswitch/multiswitch.css',
+	styles: './assets/components/multiswitch/multiswitch.css',
 	script: [
-		'./components/current-device/current-device.min.js',
-		'./components/multiswitch/multiswitch.min.js'
+		'./assets/components/current-device/current-device.min.js',
+		'./assets/components/multiswitch/multiswitch.min.js'
 	],
 	dependencies: 'rdNavbar',
 	init: function ( nodes ) {
@@ -610,11 +509,11 @@ components.multiswitch = {
 
 components.nav = {
 	selector: '.nav',
-	styles: './components/nav/nav.css',
+	styles: './assets/components/nav/nav.css',
 	script: [
-		'./components/jquery/jquery.min.js',
-		'./components/bootstrap/js/popper.min.js',
-		'./components/bootstrap/js/bootstrap.min.js'
+		'./assets/components/jquery/jquery.min.js',
+		'./assets/components/bootstrap/js/popper.min.js',
+		'./assets/components/bootstrap/js/bootstrap.min.js'
 	],
 	init: function ( nodes ) {
 		nodes.forEach( function ( node ) {
@@ -632,11 +531,11 @@ components.nav = {
 
 components.owl = {
 	selector: '.owl-carousel',
-	styles: './components/owl-carousel/owl.carousel.css',
+	styles: './assets/components/owl-carousel/owl.carousel.css',
 	script: [
-		'./components/jquery/jquery.min.js',
-		'./components/owl-carousel/owl.carousel.min.js',
-		'./components/util/util.min.js'
+		'./assets/components/jquery/jquery.min.js',
+		'./assets/components/owl-carousel/owl.carousel.min.js',
+		'./assets/components/util/util.min.js'
 	],
 	init: function ( nodes ) {
 		nodes.forEach( function ( node ) {
@@ -686,13 +585,13 @@ components.pageReveal = {
 components.rdMailform = {
 	selector: '.rd-mailform',
 	styles: [
-		'./components/rd-mailform/rd-mailform.css',
-		'./components/font-awesome/font-awesome.css',
-		'./components/mdi/mdi.css'
+		'./assets/components/rd-mailform/rd-mailform.css',
+		'./assets/components/font-awesome/font-awesome.css',
+		'./assets/components/mdi/mdi.css'
 	],
 	script: [
-		'./components/jquery/jquery.min.js',
-		'./components/rd-mailform/rd-mailform.min.js',
+		'./assets/components/jquery/jquery.min.js',
+		'./assets/components/rd-mailform/rd-mailform.min.js',
 	],
 	init: function ( nodes ) {
 		let i, j, k,
@@ -969,12 +868,12 @@ components.rdMailform = {
 
 components.rdNavbar = {
 	selector: '.rd-navbar',
-	styles: './components/rd-navbar/rd-navbar.css',
+	styles: './assets/components/rd-navbar/rd-navbar.css',
 	script: [
-		'./components/jquery/jquery.min.js',
-		'./components/util/util.min.js',
-		'./components/current-device/current-device.min.js',
-		'./components/rd-navbar/rd-navbar.min.js'
+		'./assets/components/jquery/jquery.min.js',
+		'./assets/components/util/util.min.js',
+		'./assets/components/current-device/current-device.min.js',
+		'./assets/components/rd-navbar/rd-navbar.min.js'
 	],
 	dependencies: 'currentDevice',
 	init: function ( nodes ) {
@@ -1066,11 +965,11 @@ components.rdNavbar = {
 
 components.slick = {
 	selector: '.slick-slider',
-	styles: './components/slick/slick.css',
+	styles: './assets/components/slick/slick.css',
 	script: [
-		'./components/jquery/jquery.min.js',
-		'./components/slick/slick.min.js',
-		'./components/util/util.min.js'
+		'./assets/components/jquery/jquery.min.js',
+		'./assets/components/slick/slick.min.js',
+		'./assets/components/util/util.min.js'
 	],
 	init: function ( nodes ) {
 		nodes.forEach( function ( node ) {
@@ -1120,13 +1019,13 @@ components.slick = {
 components.swiper = {
 	selector: '.swiper-container',
 	styles: [
-		'./components/animate/animate.css',
-		'./components/swiper/swiper.css'
+		'./assets/components/animate/animate.css',
+		'./assets/components/swiper/swiper.css'
 	],
 	script: [
-		'./components/swiper/swiper.min.js',
-		'./components/swiper/swiper-progress-circle.min.js',
-		'./components/util/util.min.js'
+		'./assets/components/swiper/swiper.min.js',
+		'./assets/components/swiper/swiper-progress-circle.min.js',
+		'./assets/components/util/util.min.js'
 	],
 	init: function ( nodes ) {
 		nodes.forEach( function ( node ) {
@@ -1300,10 +1199,10 @@ components.swiper = {
 
 components.regula = {
 	selector: '[data-constraints]',
-	styles: './components/regula/regula.css',
+	styles: './assets/components/regula/regula.css',
 	script: [
-		'./components/jquery/jquery.min.js',
-		'./components/regula/regula.min.js'
+		'./assets/components/jquery/jquery.min.js',
+		'./assets/components/regula/regula.min.js'
 	],
 	init: function ( nodes ) {
 		let elements = $( nodes );
@@ -1373,11 +1272,11 @@ components.regula = {
 
 components.tooltip = {
 	selector: '[data-toggle="tooltip"]',
-	styles: './components/tooltip/tooltip.css',
+	styles: './assets/components/tooltip/tooltip.css',
 	script: [
-		'./components/jquery/jquery.min.js',
-		'./components/bootstrap/js/popper.min.js',
-		'./components/bootstrap/js/bootstrap.min.js'
+		'./assets/components/jquery/jquery.min.js',
+		'./assets/components/bootstrap/js/popper.min.js',
+		'./assets/components/bootstrap/js/bootstrap.min.js'
 	],
 	init: function( nodes ) {
 		nodes.forEach( function ( node ) {
@@ -1388,13 +1287,13 @@ components.tooltip = {
 
 components.preloader = {
 	selector: '.preloader',
-	styles:   './components/preloader/preloader.css'
+	styles:   './assets/components/preloader/preloader.css'
 };
 
 components.toTop = {
 	selector: 'html',
-	styles: './components/to-top/to-top.css',
-	script: './components/jquery/jquery.min.js',
+	styles: './assets/components/to-top/to-top.css',
+	script: './assets/components/jquery/jquery.min.js',
 	init: function () {
 		if ( !window.xMode ) {
 			let node = document.createElement( 'div' );

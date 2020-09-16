@@ -12,8 +12,6 @@
 @import 'generic/functions';
 @import 'generic/mixins';
 @import 'generic/reset';
-@import 'generic/fonts';
-@import 'generic/base';
 @import 'generic/helpers';
 
 /* ------------------------------------------------------------ *\
@@ -33,11 +31,6 @@
 	Generic
 \* ------------------------------------------------------------ */
 
-@import 'generic/variables';
-@import 'generic/reset';
-@import 'generic/fonts';
-@import 'generic/mixins';
-@import 'generic/functions';
 
 /*
 @import 'generic/base';*/
@@ -53,7 +46,6 @@
 @import "components/bar";
 @import "components/block";
 @import "components/box-different";
-@import "components/box";
 @import "components/btn-dark";
 @import "components/btn-round";
 @import "components/btn-small";
@@ -69,8 +61,8 @@
 @import "components/header";
 @import "components/icons";
 @import "components/item";
-@import "components/logo";
-@import "components/main";
+/*@import "components/logo";
+@import "components/main";*/
 @import "components/nav";
 @import "components/panel";
 
@@ -86,7 +78,15 @@
 @import "components/shell";
 @import "components/slider";
 @import "components/switch";
-@import "components/tab";
-@import "components/tabs";
+
 @import "components/tag";
-@import "components/wrapper";
+/*@import "components/wrapper";*/
+li.tiny-text.text-left.left-text.targetme {
+    padding: 0px !important;
+    margin: 0px !important;
+    line-height: 2 !important;
+    text-align: left !important;
+}
+.components .components__row {
+    margin: 20px 0;
+}

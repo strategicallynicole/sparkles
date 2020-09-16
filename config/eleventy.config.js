@@ -9,7 +9,7 @@ const cleanCSS = require("clean-css");
 const fs = require("fs");
 const pluginRSS = require("@11ty/eleventy-plugin-rss");
 const localImages = require("eleventy-plugin-local-images");
-const lazyImages = require("eleventy-plugin-lazyimages");
+const lazyImagesPlugin = require("eleventy-plugin-lazyimages");
 const ghostContentAPI = require("@tryghost/content-api");
 const Handlebars = require("handlebars");
 const htmlMinTransform = require("./transforms/html-min-transform.js");
@@ -18,8 +18,10 @@ const sass = require('./sass-process');
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 //Watching for modificaions in style directory
 /*sass('src/preprocess/neu.scss', 'dist/assets/css/neu.css');*/
-sass('./src/assets/components/base/base.scss', './dist/assets/css/base.css');
-sass('./src/assets/neu/style.scss', './dist/assets/css/style.css');
+const googleclosurecompiler = require("google-closure-compiler");
+sass('src/assets/components/base/base.scss', 'dist/assets/css/base.css');
+sass('src/assets/neu/style.scss', 'dist/assets/css/style.css');
+
 const { minify } = require("terser");
 
 const outputDir = 'dist';
@@ -38,6 +40,8 @@ const stripDomain = url => {
 
 
 module.exports = function(config) {
+  config.addPlugin(lazyImagesPlugin);
+
     config.addNunjucksAsyncFilter("jsmin", async function (
         code,
         callback
@@ -52,6 +56,7 @@ module.exports = function(config) {
         }
       });
     config.setLibrary("pug", pug);
+    config.setLibrary("nunjucks", nunjucks);
 
 
     // Apply performance attributes to images
@@ -69,6 +74,8 @@ module.exports = function(config) {
     config.addLayoutAlias('tag', 'tag.njk');
     config.addLayoutAlias('base', 'default.pug');
     config.addLayoutAlias('hometel', 'index.pug');
+    config.addLayoutAlias('blog', 'blog.pug');
+    config.addLayoutAlias('blogger', 'blogger.njk');
 
 
     config.addLayoutAlias('posts', './src/11ty/_includes/layouts/doc.njk');
