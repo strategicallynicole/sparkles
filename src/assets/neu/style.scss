@@ -44,7 +44,6 @@
 @import "components/accordion";
 @import "components/animation";
 @import "components/bar";
-@import "components/block";
 @import "components/box-different";
 @import "components/btn-dark";
 @import "components/btn-round";
@@ -88,4 +87,23 @@ li.tiny-text.text-left.left-text.targetme {
 }
 .components .components__row {
     margin: 20px 0;
+}
+@mixin neuneubg {
+background: linear-gradient(0deg, #121212, #212121), url('/media/img/texture.svg');
+background-attachment: fixed;
+background-size: cover;
+background-blend-mode: normal, luminosity;
+/* mbtiblockstroke */
+
+border: 2px solid #121212;
+/* mbtieffect */
+
+box-shadow: -5px -5px 20px #000000, 3px 3px 10px #212121;
+}
+.wrapper {
+  @include neuneubg;
+}
+
+.blurb {
+
 }

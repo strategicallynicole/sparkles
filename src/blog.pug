@@ -3,20 +3,17 @@ pagination:
   data: collections.posts
   size: 6
   alias: posts
-layout: base
+layout: blog
 addAllPagesToCollections: true
 ---
+extends 11ty/_includes/layouts/blog.pug
+include 11ty/_includes/mixins/card.pug
 block content
   .h1 An 
     strike Overly
     |  Opinionated Growth Blog
   .container
       .row
-        each post in collections.posts.slice(0,2)
-            .col-lg.flex-column
-                include 11ty/_includes/partials/card.pug
-      .row
-        each post in collections.posts.slice(3,5)
-            .col-lg.flex-column
-                include 11ty/_includes/partials/card.pug
-        //include 11ty/_includes/partials/pagination.njk
+        each post in collections.posts
+            .flex-column
+                +card(post)

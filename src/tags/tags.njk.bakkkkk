@@ -1,0 +1,12 @@
+---
+pagination:
+  data: collections.tags
+  size: 1
+  alias: tag
+  addAllPagesToCollections: true
+layout: 'tags'
+permalink: '{{ tag.url }}'
+---
+{% block content %}
+{{tag.description | safe if tag.description else tag.count.posts + " posts" }}
+{% endblock %}

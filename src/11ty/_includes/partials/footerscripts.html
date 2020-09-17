@@ -50,3 +50,10 @@ $accordionTrigger.on('click', function (event) {
         });
     </script>
     		<script src='/assets/components/sidebar/js/bootstrap.min.js'> </script>
+    <script src='assets/js/readingtime.js'> </script>
+    <script type="text/javascript">
+
+// ReadingTime(numberWordsPerMinute, readigTimeLabel, minutesLabel, wordsLabel, lessThanAMinuteLabel)
+document.addEventListener('DOMContentLoaded', (event) => {
+  new ReadingTime(270, 'Reading time:', 'min', 'words', 'Less than a minute');
+})</script>

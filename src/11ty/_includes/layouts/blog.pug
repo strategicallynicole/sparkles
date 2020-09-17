@@ -1,6 +1,5 @@
----
-layout: base
----
+extends default
+include ../mixins/mixins
 block content
   .h1 An 
     strike Overly
@@ -8,6 +7,6 @@ block content
   .container
       .row
         each post in collections.posts
-            .col-md
-                include ../partials/card.pug
-  include ../partials/pagination.pug
+            .col-sm
+                +card(post)
+

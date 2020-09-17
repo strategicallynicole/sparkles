@@ -1,9 +1,8 @@
 doctype html
 //- Import mixins here to use globally
-include ../mixins/mixins.pug
+import mixins/mixins
 html(lang="en")
 	head
-		title Page
 		meta(charset="utf-8")
 		meta(name="viewport" content="width=device-width, height=device-height, initial-scale=1.0")
 		meta(http-equiv="X-UA-Compatible" content="IE=edge")
@@ -15,6 +14,8 @@ html(lang="en")
 		script(src='/assets/components/base/core.min.js')
 		script(src='/assets/components/base/script.js')
 		script(src='/assets/vendor/jquery-ui.min.js')
+		block seo
+			title Page
 
 	body
 		.wrapper
@@ -23,8 +24,8 @@ html(lang="en")
 				.content
 					nav.navbar.navbar-expand-lg.navbar-light.bg-dark
 					.container-fluid
-						block content
-							| !{content}
+					block content
+						| !{content}
 					include ../content/getintouch.pug
 					include ../partials/footerscripts.html
 	

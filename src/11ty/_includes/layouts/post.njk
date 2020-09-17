@@ -15,12 +15,22 @@ layout: base
             </figure>
         {% endif %}
         <section class="post-full-content">
-            <h1 class="content-title">{{ title }}</h1>
+            <h1 class="content-title">{{ title }}</h1><br />
+                <div class="gimmesomespace mb-20 mt-20" class="margin-top:20px; margin-bottom: 20px;"></div>
+
             <section class="content-body load-external-scripts">
                 {{ content | safe }}
             </section>
         </section>
-    </article>
+    </article><br />
+    <nav aria-labelledby="my-pagination">
+  <ul>
+    <li>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}Previous{% endif %}</li>
+    <li>{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{% else %}Next{% endif %}</li>
+  </ul>
+</nav>
+    <div class="gimmesomespace mb-20 mt-20" class="margin-top:20px; margin-bottom: 20px;"></div>
+
     <div id="disqus_thread"></div>
 <script>
 

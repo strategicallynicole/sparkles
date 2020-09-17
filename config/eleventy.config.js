@@ -40,6 +40,72 @@ const stripDomain = url => {
 
 
 module.exports = function(config) {
+    config.addShortcode("getreadingtime", function(content) {
+           
+        let output;
+         // Get content
+         let content = document.getElementById('post-content').innerHTML;
+         // Count the number of words in content
+         let words = content.match(/\b[-?(\w+)?]+\b/gi);
+         let wordCount = words.length;
+         // Calculate the reading time in minutes based on average reading speed
+         let timeInMinutes = (wordCount / 225);
+         // Use conditional to output rounded value
+         if(timeInMinutes <= 0.5) {
+           output = 1;
+         } else {
+           //round to nearest minute
+           output = Math.round(timeInMinutes);
+         }
+         return `${output}` + '-minute read' + ``;
+});
+   
+    
+        // JavaScript Template Function (New in 0.7.0)
+        config.addJavaScriptFunction("getreadingtime", function(content) {
+           
+            let output;
+             // Get content
+             let content = document.getElementById('post-content').innerHTML;
+             // Count the number of words in content
+             let words = content.match(/\b[-?(\w+)?]+\b/gi);
+             let wordCount = words.length;
+             // Calculate the reading time in minutes based on average reading speed
+             let timeInMinutes = (wordCount / 225);
+             // Use conditional to output rounded value
+             if(timeInMinutes <= 0.5) {
+               output = 1;
+             } else {
+               //round to nearest minute
+               output = Math.round(timeInMinutes);
+             }
+             return `${output}` + '-minute read' + ``;
+    });
+        // Universal Shortcodes are added to:
+        // * Liquid
+        // * Nunjucks
+        // * Handlebars
+        // * JavaScript (New in 0.7.0)
+        config.addPairedShortcode("getreadingtime", function(content) {
+           
+                let output;
+                 // Get content
+                 let content = document.getElementById('post-content').innerHTML;
+                 // Count the number of words in content
+                 let words = content.match(/\b[-?(\w+)?]+\b/gi);
+                 let wordCount = words.length;
+                 // Calculate the reading time in minutes based on average reading speed
+                 let timeInMinutes = (wordCount / 225);
+                 // Use conditional to output rounded value
+                 if(timeInMinutes <= 0.5) {
+                   output = 1;
+                 } else {
+                   //round to nearest minute
+                   output = Math.round(timeInMinutes);
+                 }
+                 return `${output}` + '-minute read' + ``;
+        });
+  
  /* config.addPlugin(lazyImagesPlugin);
 */
     config.addNunjucksAsyncFilter("jsmin", async function (
@@ -71,16 +137,15 @@ module.exports = function(config) {
     config.addPlugin(pluginRSS);
     config.addLayoutAlias('author', 'author.njk');
     config.addLayoutAlias('post', 'post.njk');
-    config.addLayoutAlias('tag', 'tag.njk');
+    config.addLayoutAlias('tag', 'tag.pug');
     config.addLayoutAlias('base', 'default.pug');
     config.addLayoutAlias('hometel', 'index.pug');
     config.addLayoutAlias('blog', 'blog.pug');
     config.addLayoutAlias('blogger', 'blogger.njk');
-    config.addLayoutAlias('tag', 'tag.njk');
     config.addLayoutAlias('post', 'post.njk');
     config.addLayoutAlias('doc', 'doc.njk');
     config.addLayoutAlias('default.pug', 'default.pug');
-    config.addLayoutAlias('tags', 'tag.njk');
+    config.addLayoutAlias('tags', 'tag.pug');
 
 
     
