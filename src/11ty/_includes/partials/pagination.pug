@@ -1,0 +1,9 @@
+if pagination.previousPageHref || pagination.nextPageHref 
+    nav#pagination.pagination(aria-labelledby="pagination")
+        if page.permalink != pagination.previousPageHref
+            a(href=pagination.previousPageHref) Prev page
+        if page.permalink != pagination.nextPageHref
+            a(href=pagination.nextPageHref) Next page
+        else
+else
+    span No more posts

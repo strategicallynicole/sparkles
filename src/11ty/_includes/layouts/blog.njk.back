@@ -1,11 +1,7 @@
 ---
-pagination:
-  data: collections.posts
-  size: 6
-  alias: posts
+layout: base
 ---
 
-{% extends 'layouts/default.pug' %}
 {% from "partials/card.njk" import card %}
 
 {% set title = "Posts" %}
@@ -18,5 +14,4 @@ pagination:
         {% endfor %}
     </section>
 
-    {% include "partials/nextprev.js" %}
 {% endblock%}

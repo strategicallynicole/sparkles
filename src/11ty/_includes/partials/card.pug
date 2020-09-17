@@ -1,16 +1,29 @@
-a.post-card(href=post.url)
-    header.post-card-header
-        img.post-card-image(src=post.feature_image alt=post.title)
-        .post-card-tags
-            if post.tags
-                each tag in post.tags
-                    span #{ tag.name } 
-        h2.post-card-title #{ post.title }
-    .post-card-body
-        .post-card-excerpt
-            p #{ post.excerpt }
-    footer.post-card-footer
-        .post-card-footer-left
-            a.neubutton(href=post.url) Read More
-        .post-card-footer-right
-            div #{ post.html | safe | getReadingTime } min read
+mixin card(post)
+    neucardcontainer.mb-50.mt-10
+        header.post-card-header
+            if post.feature_image
+                figure.neucardimage(style='background-image: url( #{post.feature_image});')
+                    a(href=post.url)
+                        img.neucardimage(src=post.feature_image alt=post.title)
+            a.post-card(href=post.url)
+            .neuradius
+                .fancy-box-header
+                    .h2 #{post.title}
+                .fancy-box-time-container
+                    i.fad.fa-clock
+                        include ../partials/getreadingtime.njk
+                        span min read
+                .fancy-box-tags-container
+                    .post-card-tags
+                        if post.tags
+                            each tag in post.tags.slice(0,1)
+                                a(href=tag.url)
+                                    span #{ tag.name }
+                .fancybody
+                    h3
+                        a.text-white.titlefancycard(href=post.url)
+                          |  #{post.title}
+                .fancy-box-footer.text-center.pb-30
+                    .neubutton
+                        a(href=post.url)
+                            | Read On

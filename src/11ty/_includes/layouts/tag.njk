@@ -1,7 +1,6 @@
 ---
 layout: base
 ---
-
 {% set title = tag.name %}
 
 {% block content %}
@@ -12,7 +11,7 @@ layout: base
     <section class="post-feed">
         {% if tag.posts %}
             {% for post in tag.posts %}
-            {% include "../partials/card.pug" %}
+                {% include "../partials/card.pug" %}
             {% endfor %}
         {% else %}
             <p>No posts to be found</p>

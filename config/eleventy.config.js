@@ -40,21 +40,21 @@ const stripDomain = url => {
 
 
 module.exports = function(config) {
-  config.addPlugin(lazyImagesPlugin);
-
+ /* config.addPlugin(lazyImagesPlugin);
+*/
     config.addNunjucksAsyncFilter("jsmin", async function (
         code,
         callback
-      ) {
+        ) {
         try {
-          const minified = await minify(code);
-          callback(null, minified.code);
+            const minified = await minify(code);
+            callback(null, minified.code);
         } catch (err) {
-          console.error("Terser error: ", err);
-          // Fail gracefully.
-          callback(null, code);
+            console.error("Terser error: ", err);
+            // Fail gracefully.
+            callback(null, code);
         }
-      });
+     });
     config.setLibrary("pug", pug);
     config.setLibrary("nunjucks", nunjucks);
 
@@ -76,18 +76,21 @@ module.exports = function(config) {
     config.addLayoutAlias('hometel', 'index.pug');
     config.addLayoutAlias('blog', 'blog.pug');
     config.addLayoutAlias('blogger', 'blogger.njk');
+    config.addLayoutAlias('tag', 'tag.njk');
+    config.addLayoutAlias('post', 'post.njk');
+    config.addLayoutAlias('doc', 'doc.njk');
+    config.addLayoutAlias('default.pug', 'default.pug');
+    config.addLayoutAlias('tags', 'tag.njk');
 
 
-    config.addLayoutAlias('posts', './src/11ty/_includes/layouts/doc.njk');
-    config.addLayoutAlias('tags', './src/11ty/_includes/layouts/tag.njk');
-    config.addLayoutAlias('docs', './src/11ty/_includes/layouts/doc.njk');
+    
     // Copy images over from Ghost
     config.addPlugin(localImages, {
         distPath: "dist",
         assetPath: "/content/images",
         selector: "img",
         attribute: "data-src",
-        verbose: true
+        verbose: false
     });
 
       

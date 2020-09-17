@@ -132,8 +132,8 @@ $navbar-shadow: none;
     /* roundbuttonnooutline */
     overflow-x: hidden;
     text-transform: uppercase;
-    background: linear-gradient(139.08deg, #353A40 10.44%, #121416 95.94%);
-    border: 1px solid #2D2F34;
+    /*background: linear-gradient(139.08deg, #353A40 10.44%, #121416 95.94%);
+    */padding: 1px solid #2D2F34;
     box-shadow: 52px 20px 88px rgba(2, 3, 3, 0.5), -8px -16px 56px rgba(108, 91, 167, 0.14), inset -16px -6px 80px rgba(248, 249, 249, 0.03);
     border-radius: 20px;
     /* Note: backdrop-filter has minimal browser support */
@@ -417,9 +417,7 @@ ul.CTAs a {
     /* Adjust the dropdown links padding*/
     #sidebar.active ul ul a {
     }
-    .dropdown.super-small-btn {
-        margin-left: 9px;
-    }
+  
     /* Changing the arrow position to bottom center position, 
       translateX(50%) works with right: 50% 
       to accurately  center the arrow */

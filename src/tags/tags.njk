@@ -4,8 +4,9 @@ pagination:
   size: 1
   alias: tag
   addAllPagesToCollections: true
-layout: 'tag'
+layout: 'tags'
 permalink: '{{ tag.url }}'
 ---
-
-{{ tag.description | safe if tag.description else tag.count.posts + " posts" }}
+{% block content %}
+{{tag.description | safe if tag.description else tag.count.posts + " posts" }}
+{% endblock %}

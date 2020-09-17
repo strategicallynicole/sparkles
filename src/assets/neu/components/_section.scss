@@ -14,8 +14,8 @@
 		left: -100%;
 		right: -100%;
 		z-index: -1;
-		background: linear-gradient(173.26deg, #262B2F -0.68%, #16191D 74.03%);
-
+		background: linear-gradient(0deg, #121212, #212121), url(/media/img/texture.jpg);
+		background-blend-mode: normal, luminosity;
 		@include breakpoint-down(tablet) {
 			display: none;
 		}

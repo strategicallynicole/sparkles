@@ -66,7 +66,7 @@
 @import "../to-top/to-top";
 @import "../tooltip/tooltip";
 @import "../video/video";
-@import "../rd-navbar/rd-navbar.scss";
+@import "../rd-navbar/rd-navbar";
 // Variables
 $navbar-color: $body-color;
 $navbar-hover: $primary;
@@ -103,7 +103,6 @@ $navbar-shadow: none;
     /* roundbuttonnooutline */
     overflow-x: hidden;
     text-transform: uppercase;
-    background: linear-gradient(139.08deg, #353A40 10.44%, #121416 95.94%);
     border: 1px solid #2D2F34;
     box-shadow: 52px 20px 88px rgba(2, 3, 3, 0.5), -8px -16px 56px rgba(108, 91, 167, 0.14), inset -16px -6px 80px rgba(248, 249, 249, 0.03);
     border-radius: 20px;
@@ -116,7 +115,10 @@ $navbar-shadow: none;
     padding: 15px;
     /* or 42px */
 }
+.tinyfootertext {
+    font-size: 0.8rm;
 
+}
 
 /* effect-shine */
 

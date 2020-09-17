@@ -1,12 +1,13 @@
-extends default
+---
+layout: base
+---
 block content
   .h1 An 
     strike Overly
     |  Opinionated Growth Blog
   .container
       .row
-        each post in collections.posts.slice(0,6)
-            .col-sm
+        each post in collections.posts
+            .col-md
                 include ../partials/card.pug
-
-  include ../partials/nextprev.js
+  include ../partials/pagination.pug

@@ -1,14 +1,11 @@
-{% if pagination.previousPageHref or pagination.nextPageHref %}
-    <nav class="pagination" role="pagination">
-        {% if page.permalink != pagination.previousPageHref %}
-            <a href="{{ pagination.previousPageHref }}">Prev page</a>
-        {% else %}
-            <span>Prev page</span>
-        {% endif %}
-        {% if page.permalink != pagination.nextPageHref %}
-            <a href="{{ pagination.nextPageHref }}">Next page</a>
-        {% else %}
-            <span>Next page</span>
-        {% endif %}
-    </nav>
-{% endif %}
+<nav aria-labelledby="my-pagination" class="pagination">
+<ul>
+    <li>{% if page.url != pagination.href.first %}<a href="{{ pagination.href.first }}">First</a>{% else %}First{% endif %}</li>
+    <li>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}Previous{% endif %}</li>
+{%- for pageEntry in pagination.pages %}
+    <li><a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>Page {{ loop.index }}</a></li>
+{%- endfor %}
+    <li>{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{% else %}Next{% endif %}</li>
+    <li>{% if page.url != pagination.href.last %}<a href="{{ pagination.href.last }}">Last</a>{% else %}Last{% endif %}</li>
+    </ul>
+</nav>
