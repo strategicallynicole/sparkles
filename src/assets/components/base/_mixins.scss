@@ -49,8 +49,8 @@
 
 @mixin gradient2( $deg1: 0deg, $deg2: 0deg ) {
 	background-image:
-		linear-gradient($deg1, #3A3E41 0%, #2A2D30 49%, #242628 100%),
-		linear-gradient($deg2, #434B54 1%, #2A2C2F 45%, #191B1E 75%);
+		linear-gradient($deg1, #333333 0%, #212121 49%, #121212 100%),
+		linear-gradient($deg2, #333333 1%, #212121 45%, #121212 75%);
 }
 
 @mixin gradient3 {
