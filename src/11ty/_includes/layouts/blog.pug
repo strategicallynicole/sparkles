@@ -1,4 +1,5 @@
-extends default.pug
+extends default
+include ../mixins/mixins
 block content
   .h1 An 
     strike Overly
@@ -6,5 +7,5 @@ block content
   .container
       .row
         each post in collections.posts
-            .flex-column
+            .col-sm
                 +card(post)

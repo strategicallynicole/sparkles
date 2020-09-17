@@ -6,3 +6,14 @@ pagination:
 layout: blog
 addAllPagesToCollections: true
 ---
+extends 11ty/_includes/layouts/blog.pug
+include 11ty/_includes/mixins/card.pug
+block content
+  .h1 An 
+    strike Overly
+    |  Opinionated Growth Blog
+  .container
+      .row
+        each post in collections.posts
+            .flex-column
+                +card(post)

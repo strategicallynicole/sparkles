@@ -1,7 +1,34 @@
 doctype html
 //- Import mixins here to use globally
+mixin card(post)
+	neucardcontainer.mb-50.mt-10
+		header.post-card-header
+			if post.feature_image
+				figure.neucardimage(style='background-image: url( #{post.feature_image});')
+					a(href=post.url)
+						img.neucardimage(src=post.feature_image alt=post.title)
+			a.post-card(href=post.url)
+				.neuradius
+					.fancy-box-header
+						.h2 #{post.title}
+						.fancy-box-time-container.detail-wrapper
+							i.fad.fa-clock
+							.reading-time
+								span.reading-time__label
+								span.reading-time__duration
+								span.reading-time__word-count
+						.fancy-box-tags-container
+							.post-card-tags
+								if post.tags
+									each tag in post.tags.slice(0,1)
+										a(href=tag.url)
+										span #{ tag.name }
+					.fancybody
+						a.text-white(href=post.url)
+							p #{post.excerpt}
+					.fancy-box-footer.text-center.pb-30
+						a.btn.smallbtn.text-center(href=post.url) Read On
 html(lang="en")
-include ../mixins/mixins.pug
 	head
 		meta(charset="utf-8")
 		meta(name="viewport" content="width=device-width, height=device-height, initial-scale=1.0")
