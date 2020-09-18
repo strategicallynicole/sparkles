@@ -3,11 +3,8 @@ pagination:
   data: collections.posts
   size: 6
   alias: posts
-layout: base
-addAllPagesToCollections: true
+layout: posts
 ---
-extends 11ty/_includes/layouts/default.pug
-include 11ty/_includes/mixins/card.pug
 block content
   .h1 An 
     strike Overly

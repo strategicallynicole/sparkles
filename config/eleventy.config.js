@@ -40,86 +40,12 @@ const stripDomain = url => {
 
 
 module.exports = function(config) {
-    config.addShortcode("getreadingtime", function(content) {
-           
-        let output;
-         // Get content
-         let content = document.getElementById('post-content').innerHTML;
-         // Count the number of words in content
-         let words = content.match(/\b[-?(\w+)?]+\b/gi);
-         let wordCount = words.length;
-         // Calculate the reading time in minutes based on average reading speed
-         let timeInMinutes = (wordCount / 225);
-         // Use conditional to output rounded value
-         if(timeInMinutes <= 0.5) {
-           output = 1;
-         } else {
-           //round to nearest minute
-           output = Math.round(timeInMinutes);
-         }
-         return `${output}` + '-minute read' + ``;
-});
    
     
         // JavaScript Template Function (New in 0.7.0)
-        config.addJavaScriptFunction("getreadingtime", function(content) {
-           
-            let output;
-             // Get content
-             let content = document.getElementById('post-content').innerHTML;
-             // Count the number of words in content
-             let words = content.match(/\b[-?(\w+)?]+\b/gi);
-             let wordCount = words.length;
-             // Calculate the reading time in minutes based on average reading speed
-             let timeInMinutes = (wordCount / 225);
-             // Use conditional to output rounded value
-             if(timeInMinutes <= 0.5) {
-               output = 1;
-             } else {
-               //round to nearest minute
-               output = Math.round(timeInMinutes);
-             }
-             return `${output}` + '-minute read' + ``;
-    });
-        // Universal Shortcodes are added to:
-        // * Liquid
-        // * Nunjucks
-        // * Handlebars
-        // * JavaScript (New in 0.7.0)
-        config.addPairedShortcode("getreadingtime", function(content) {
-           
-                let output;
-                 // Get content
-                 let content = document.getElementById('post-content').innerHTML;
-                 // Count the number of words in content
-                 let words = content.match(/\b[-?(\w+)?]+\b/gi);
-                 let wordCount = words.length;
-                 // Calculate the reading time in minutes based on average reading speed
-                 let timeInMinutes = (wordCount / 225);
-                 // Use conditional to output rounded value
-                 if(timeInMinutes <= 0.5) {
-                   output = 1;
-                 } else {
-                   //round to nearest minute
-                   output = Math.round(timeInMinutes);
-                 }
-                 return `${output}` + '-minute read' + ``;
-        });
-  
+
  config.addPlugin(lazyImagesPlugin);
-    config.addNunjucksAsyncFilter("jsmin", async function (
-        code,
-        callback
-        ) {
-        try {
-            const minified = await minify(code);
-            callback(null, minified.code);
-        } catch (err) {
-            console.error("Terser error: ", err);
-            // Fail gracefully.
-            callback(null, code);
-        }
-     });
+  
     config.setLibrary("pug", pug);
     config.setLibrary("nunjucks", nunjucks);
 
@@ -315,11 +241,14 @@ module.exports = function(config) {
     });
 
     // minify the html output when running in prod
+
+/*if (projectVars.production) {
         config.addPlugin(pluginPWA);
         config.addTransform(
             "htmlmin",
             require("../build/scripts/minify-html")
         );
+    }*/
 
     // Copy `src/static/` to `dist/`
     config.addPassthroughCopy({ "src/static/": "static/" });
@@ -327,6 +256,7 @@ module.exports = function(config) {
     config.addPassthroughCopy({ "src/media/": "media/" });
     config.addPassthroughCopy({ "src/assets/css/": "assets/css/" });
     config.addPassthroughCopy({ "src/media/img/": "assets/img/" });
+
     config.addPassthroughCopy({ "src/assets/": "assets/" });
     config.addPassthroughCopy({ "src/assets/vendor/": "assets/vendor/" });
     config.addPassthroughCopy({ "src/assets/js/": "assets/js/" });
