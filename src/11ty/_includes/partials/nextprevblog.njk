@@ -1,0 +1,6 @@
+<nav aria-labelledby="my-pagination">
+  <ul>
+    <li>{% if pagination.href.previous %}<div class="neubtn neubutton button btn effect-shint btnfront"><a style="float: left; display: inline;" href="{{ pagination.href.previous }}">Previous</a></div>{% else %}Previous{% endif %}</li>
+    <li>{% if pagination.href.next %}<div class="neubtn neubutton button btn effect-shint btnfront"><a style="float: right; display: inline;" href="{{ pagination.href.next }}">Next</a></div>{% else %}Next{% endif %}</li>
+  </ul>
+</nav> 

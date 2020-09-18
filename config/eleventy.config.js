@@ -30,7 +30,7 @@ const outputDir = 'dist';
 const api = new ghostContentAPI({
     url: process.env.GHOST_API_URL,
     key: process.env.GHOST_CONTENT_API_KEY,
-    version: "v3"
+    version: "v2"
 });
 
 // Strip Ghost domain from urls
@@ -106,8 +106,7 @@ module.exports = function(config) {
                  return `${output}` + '-minute read' + ``;
         });
   
- /* config.addPlugin(lazyImagesPlugin);
-*/
+ config.addPlugin(lazyImagesPlugin);
     config.addNunjucksAsyncFilter("jsmin", async function (
         code,
         callback
@@ -136,13 +135,13 @@ module.exports = function(config) {
     // Assist RSS feed template
     config.addPlugin(pluginRSS);
     config.addLayoutAlias('author', 'author.njk');
-    config.addLayoutAlias('post', 'post.njk');
+    config.addLayoutAlias('post', 'post.pug');
     config.addLayoutAlias('tag', 'tag.pug');
     config.addLayoutAlias('base', 'default.pug');
     config.addLayoutAlias('hometel', 'index.pug');
     config.addLayoutAlias('blog', 'blog.pug');
     config.addLayoutAlias('blogger', 'blogger.njk');
-    config.addLayoutAlias('post', 'post.njk');
+    config.addLayoutAlias('post', 'post.pug');
     config.addLayoutAlias('doc', 'doc.njk');
     config.addLayoutAlias('default.pug', 'default.pug');
     config.addLayoutAlias('tags', 'tag.pug');
@@ -326,14 +325,14 @@ module.exports = function(config) {
     }*/
 
     // Copy `src/static/` to `dist/`
-    config.addPassthroughCopy({ "src/static": "static" });
-    config.addPassthroughCopy({ "src/assets/components": "assets/components" });
-    config.addPassthroughCopy({ "src/media": "media" });
-    config.addPassthroughCopy({ "src/assets/css": "assets/css" });
+    config.addPassthroughCopy({ "src/static/": "static/" });
+    config.addPassthroughCopy({ "src/assets/components/": "assets/components/" });
+    config.addPassthroughCopy({ "src/media/": "media/" });
+    config.addPassthroughCopy({ "src/assets/css/": "assets/css/" });
 
-    config.addPassthroughCopy({ "src/assets": "assets" });
-    config.addPassthroughCopy({ "src/assets/vendor": "assets/vendor" });
-    config.addPassthroughCopy({ "src/assets/js": "assets/js" });
+    config.addPassthroughCopy({ "src/assets/": "assets/" });
+    config.addPassthroughCopy({ "src/assets/vendor/": "assets/vendor/" });
+    config.addPassthroughCopy({ "src/assets/js/": "assets/js/" });
 
 
     const {

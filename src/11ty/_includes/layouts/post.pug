@@ -1,0 +1,27 @@
+extends default.pug
+block content
+    article.content
+        neucardcontainer.mb-50.mt-10
+            header.post-card-header
+                figure.neucardimage(style='background-image: url( #{post.feature_image});')
+                    img.neucardimage(src=post.feature_image alt=post.title)
+                .fancy-box-header
+                    h2 #{post.title}
+                    .fancy-box-time-container
+                        i.fad.fa-clock
+                        .reading-time
+                            span.reading-time__label
+                            span.reading-time__duration
+                            span.reading-time__word-count
+                    .fancy-box-tags-container
+                        .post-card-tags
+                            each tag in post.tags.slice(0,1)
+                                a(href=tag.url)
+                                    span #{ tag.name }
+            .fancybody
+                article.detail-wrapper
+                    | !{ content }
+                    include ../partials/nextprevblog.njk
+    .gimmesomespace.mb-20.mt-20
+    #disqus_thread
+    script(src="./assets/js/disqus.js")
