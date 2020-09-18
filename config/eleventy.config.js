@@ -71,6 +71,7 @@ module.exports = function(config) {
     config.addLayoutAlias('doc', 'doc.njk');
     config.addLayoutAlias('default.pug', 'default.pug');
     config.addLayoutAlias('tags', 'tag.pug');
+    config.addLayoutAlias('posts', 'post.pug');
 
 
     

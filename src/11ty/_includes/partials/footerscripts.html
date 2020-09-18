@@ -1,42 +1,8 @@
    <!-- jQuery CDN - Slim version (=without AJAX) -->
     <!-- Popper.JS -->
      <!-- Bootstrap JS -->
-         <link rel="stylesheet" href="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css">
 
-   <script type="text/javascript">
-   const $dropdown = $('.dropdown');
-const $trigger = $dropdown.find(' > a');
-const $dropdownContent = $dropdown.find(' > ul');
 
-    $(document).ready(function () {
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').toggle();
-                $('.page').toggleClass('active');
-                $('.swiper-slide').toggleClass('bluemoon');
-                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-
-            });
-
-$trigger.on('click', function(event) {
-	event.preventDefault();
-	$dropdownContent.slideToggle();
-});
-$( '.js-range-slider' ).slider({
-  range: 'min',
-  value: 0,
-  min: 1,
-  max: 7000,
-});
-$accordionTrigger.on('click', function (event) {
-	$(this).next().stop().slideToggle()
-		.parent().toggleClass('is-active')
-		.siblings().removeClass('is-active')
-			.find('.accordion__body').slideUp();
-});
-
-    
-    });
-</script>
     <script type="text/javascript">
         $(document).ready(function () {
                     $('#pagesSubmenu').hide();

@@ -45,14 +45,19 @@ html(lang="en")
 			title Page
 
 	body
-		.wrapper
-			include ../partials/navbar.pug
-			.page
-				.content
-					nav.navbar.navbar-expand-lg.navbar-light.bg-dark
-					.container-fluid
-					block content
-						| !{content}
-					include ../content/getintouch.pug
-					include ../partials/footerscripts.html
-	
+		.header
+		input#openSidebarMenu.openSidebarMenu(type='checkbox')
+		label.sidebarIconToggle(for='openSidebarMenu')
+			.spinner.diagonal.part-1
+			.spinner.horizontal
+			.spinner.diagonal.part-2
+		include ../partials/newsidebar.pug
+		div#center.main.page
+			.content.mainInner
+				nav.navbar.navbar-expand-lg.navbar-light.bg-dark
+				.container-fluid
+				block content
+					| !{content}
+				include ../content/getintouch.pug
+				include ../partials/footerscripts.html
+
