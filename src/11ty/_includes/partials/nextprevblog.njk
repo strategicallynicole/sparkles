@@ -1,6 +1,18 @@
+<br /><br />
 <nav aria-labelledby="my-pagination">
-  <ul>
-    <li>{% if pagination.href.previous %}<div style="float: left; display: inline; width: 50px;" class="effect-shine btnfront"><a href="{{ pagination.href.previous }}">Previous</a></div>{% else %}Previous{% endif %}</li>
-    <li>{% if pagination.href.next %}<div style="float: right; display: inline; width: 50px;" class="effect-shine btnfront"><a href="{{ pagination.href.next }}">Next</a></div>{% else %}Next{% endif %}</li>
+  <ul><li><span style="float: left;
+    display: inline;
+    width: fit-content;
+    align-items: left;
+    text-align: left !important;
+    padding: 5px;
+    vertical-align: middle;" class="effect-shine btnfront btn neubutton"><a style="font-size: 1rem; text-align: left;" href="{{ pagination.href.previous }}">Previous Post</a></span></li>
+   <li><span style="    float: right;
+    display: inline;
+    width: fit-content;
+    align-items: right;
+    text-align: right !important;
+    padding: 5px;
+    vertical-align: middle;" class="effect-shine btnfront btn neubutton"><a style="font-size: 1rem; text-align: right;" href="{{ pagination.href.next }}">Next Post</a></span></li>
   </ul>
 </nav> 
