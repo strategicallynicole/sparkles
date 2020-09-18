@@ -26,6 +26,7 @@
 		"luxon": "^1.25.0",
 		"nunjucks": "^3.2.2",
 		"pug": "^3.0.0",
+		"sass": "^1.26.10",
 		"terser": "^5.3.1"
 	},
 	"devDependencies": {
@@ -108,7 +109,7 @@
 		"minimist": "^1.2.5"
 	},
 	"scripts": {
-		"nicolehasballsofsteel": "DEBUG=Eleventy* npx eleventy   --config ./config/eleventy.config.js --serve",
+		"nicolehasballsofsteel": "DEBUG=Eleventy* npx eleventy   --config ./config/eleventy.config.js",
 		"launch": "npx eleventy   --config ./config/eleventy.config.js --serve",
 		"preinstall": "npx npm-force-resolutions",
 		"prestart": "npm run clean",

@@ -315,21 +315,18 @@ module.exports = function(config) {
     });
 
     // minify the html output when running in prod
-    
-/*if (projectVars.production) {
         config.addPlugin(pluginPWA);
         config.addTransform(
             "htmlmin",
             require("../build/scripts/minify-html")
         );
-    }*/
 
     // Copy `src/static/` to `dist/`
     config.addPassthroughCopy({ "src/static/": "static/" });
     config.addPassthroughCopy({ "src/assets/components/": "assets/components/" });
     config.addPassthroughCopy({ "src/media/": "media/" });
     config.addPassthroughCopy({ "src/assets/css/": "assets/css/" });
-
+    config.addPassthroughCopy({ "src/media/img/": "assets/img/" });
     config.addPassthroughCopy({ "src/assets/": "assets/" });
     config.addPassthroughCopy({ "src/assets/vendor/": "assets/vendor/" });
     config.addPassthroughCopy({ "src/assets/js/": "assets/js/" });
